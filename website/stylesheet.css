@@ -8,4 +8,16 @@ body {
 
 #banner {
 	text-align: left;
+	width: 960px;
+	position: fixed;
+	z-index:1000;
+}
+
+.playerButtons {
+	position: relative;
+	right: 0px;
+}
+
+#body {
+	top: 200px;
 }
