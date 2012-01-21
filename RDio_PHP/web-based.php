@@ -40,7 +40,7 @@ if ($_GET['logout']) {
   header('Location: '.$current_url);
 }
 
-if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
+if (false && $_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
