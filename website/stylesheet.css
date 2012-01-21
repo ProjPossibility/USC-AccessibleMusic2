@@ -19,5 +19,7 @@ body {
 }
 
 #body {
+	width: 960px;
 	top: 200px;
+	position: relative;
 }
