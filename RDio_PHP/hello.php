@@ -28,8 +28,9 @@ session_start();
 require_once("lib/rdio.php");
 
 // basic API set up
-define('CONSUMER_KEY', 'KEY');
-define('CONSUMER_SECRET', 'SECRET');
+// Kevin's key/secret xyu4k4p2r48p3pec6z8fsupa/pYvb45Xd5D
+define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
+define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $rdio = new Rdio(CONSUMER_KEY, CONSUMER_SECRET);
 
