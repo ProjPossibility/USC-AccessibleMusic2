@@ -61,6 +61,7 @@ if($op == "login") {
   $rdio->logOut();
   header("Location: ".$BASEURL);
 } else {
+	var_dump($rdio);
   if ($rdio->loggedIn()) {
     $person = $rdio->currentUser()->result;
     
