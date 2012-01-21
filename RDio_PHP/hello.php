@@ -1,6 +1,6 @@
 <?
 
-include_once('debug.php');
+include_once('lib/debug.php');
 
 /*
 Copyright (c) 2011 Rdio Inc
@@ -25,7 +25,7 @@ THE SOFTWARE.
 */
 
 session_start(); 
-require_once("rdio.php");
+require_once("lib/rdio.php");
 
 // basic API set up
 define('CONSUMER_KEY', 'KEY');
