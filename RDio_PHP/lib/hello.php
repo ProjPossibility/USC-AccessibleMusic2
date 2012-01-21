@@ -1,4 +1,7 @@
 <?
+
+include_once('debug.php');
+
 /*
 Copyright (c) 2011 Rdio Inc
 
