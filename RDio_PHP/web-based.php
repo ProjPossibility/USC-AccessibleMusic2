@@ -21,8 +21,8 @@
 
 session_start();
 
-require_once '../rdio.php';
-require_once 'rdio-consumer-credentials.php';
+require_once 'lib/rdio.php';
+require_once 'lib/rdio-consumer-credentials.php';
 
 # create an instance of the Rdio object with our consumer credentials
 $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
