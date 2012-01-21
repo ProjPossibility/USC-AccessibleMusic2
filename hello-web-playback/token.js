@@ -30,5 +30,7 @@ THE SOFTWARE.
 // if you want to do playback as a particular user, pass --authenticate to rdio-call
 // then update playback_token below with YOUR_PLAYBACK_TOKEN and the domain below with YOUR_DOMAIN
 
-var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
-var domain = "localhost";
+//var playback_token = "GAlNi78J_____zlyYWs5ZG02N2pkaHlhcWsyOWJtYjkyN2xvY2FsaG9zdEbwl7EHvbylWSWFWYMZwfc=";
+var playback_token = "GBNPG0Iq_____3h5dTRrNHAycjQ4cDNwZWM2ejhmc3VwYWFyZGlvLnBocGZvZ2FwcC5jb22YWTWRV8E-KaIn34X7H7mQ"; //kevin key
+//var domain = "localhost";
+var domain = "ardio.phpfogapp.com";
