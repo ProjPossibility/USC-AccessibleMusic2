@@ -8,6 +8,8 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $searchResults = $rdio->call("searchSuggestions", array("query" => "pumped up kicks"));
+echo '<pre>';
 var_dump($searchResults);
+echo '</pre>';
 
 ?>
