@@ -67,7 +67,7 @@ $(document).ready(function() {
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
 	  if (search_type.value != "All"){
-		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() & "type=" + search_type.value);
+		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
 	  } else {
 		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
 	  }
