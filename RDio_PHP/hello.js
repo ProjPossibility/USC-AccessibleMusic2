@@ -111,6 +111,9 @@ callback_object.playStateChanged = function playStateChanged(playState) {
   // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#playState').text(playState);
   myPlayState = playState;
+  if(IsNumeric(myPlayState)){
+	alert("playstate is numeric");
+	}
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
