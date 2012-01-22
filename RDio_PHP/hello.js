@@ -48,10 +48,10 @@ $(document).ready(function() {
   $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
-  $('#searchsuggest').click(function(){ 
+  $('#searchbutton').click(function(){ 
 	  alert("Clicked");
 	  var phpURL = "player.php";
-	  $('#search').load(phpURL);
+	  $('#searchsuggest').load(phpURL);
   })
 });
 
