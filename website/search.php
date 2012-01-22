@@ -24,6 +24,8 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
 $search_type = $_GET["type"];
+//$other_info = $_GET['other'];
+
 //echo $search_type;
 //echo $query;
 
@@ -54,6 +56,11 @@ if ($search_type == 'artistalbums') {
 	die('crap out');
 	
 	$searchResults = $resultsTemp->result;
+	
+	// fake the $query to the first result
+	if ( count($searchResults) ) != 0 {
+		$query = $searchResults[0]->artist;
+	}
 	
 } elseif ($search_type != 'all' ) {
 	//echo "normal search";
