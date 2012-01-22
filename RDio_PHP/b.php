@@ -35,7 +35,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
+  "://" . $_SERVER['SERVER_NAME'].'/RDio_PHP/c.php'; //$_SERVER['SCRIPT_NAME'];
 
 
 
@@ -52,6 +52,9 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     # save the new token in our session
     $_SESSION['oauth_token'] = $rdio->token[0];
     $_SESSION['oauth_token_secret'] = $rdio->token[1];
+    
+    echo 'token0: '.$rdio->token[0];
+    echo '<br>token1: '.$rdio->token[1];
   } else {
 	  echo 'B: NO SECRET?';
 	}
@@ -83,6 +86,8 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     header('Location: '.$current_url);
   }
    */
+   ?><a href="c.php">asdfasdfasdf to c</a><?php
+   //header('Location: '.$current_url);
 } else {
 	echo 'B: NO TOKENS?';
 }
