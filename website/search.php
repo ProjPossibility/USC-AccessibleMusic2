@@ -17,7 +17,6 @@ require_once 'lib/debug.php';
 </head>
 
 <body>
-
 <?php
 
 define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
