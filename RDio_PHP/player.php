@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'rdio.php';
+require_once 'lib/rdio.php';
 require_once 'lib/debug.php';
 
 define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
