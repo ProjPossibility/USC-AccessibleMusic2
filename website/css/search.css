@@ -32,10 +32,12 @@
 
 #songName {
 	width: 340px;
+	vertical-align:top;
 }
 
 #artistName {
 	width: 340px;
+	vertical-align:bottom;
 }
 
 #explicit {
