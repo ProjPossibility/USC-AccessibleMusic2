@@ -45,6 +45,7 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
+  /*
   if ($currentUser) {
     ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
       <ul><? 
@@ -64,9 +65,10 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     # and start again
     header('Location: '.$current_url);
   }
-   
+   */
 } else {
-	echo 'C: NO TOKENS?';
+	//echo 'C: NO TOKENS?';
+	// not authenticated
 }
 
 */
