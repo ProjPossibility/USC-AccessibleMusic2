@@ -92,6 +92,7 @@ $i = 1; //result #
 
 
 echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
+echo "<ol>";
 
 foreach($searchResults as $value) {
 	$type = $value->type;
@@ -167,5 +168,6 @@ foreach($process as $array){
 <!make explicit red>
 */
 ?>
+</ol>
 </body>
 </html>

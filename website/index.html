@@ -139,9 +139,9 @@ function MM_swapImage() { //v3.0
 <div id="buttons">
 <div id="apiswf" style="visibility:hidden;"></div>
 <img src="img/stop.png" alt="stop" name="stop" id="stop" style="visibility:hidden; position:absolute; left:-999px;" />
-<img src="img/blueBWD.png" alt="Previous Song" name="previous" class="playerButtons" id="previous" />
-<img src="img/bluePlaypause.png" width="133" height="108" alt="Play Pause" class="playerButtons" id="play"/>
-<img src="img/blueFWD.png" alt="Next Song" name="next" class="playerButtons" id="next" title="Next Song" />
+<img src="img/blueBWD.png" alt="Previous Song" name="previous" class="playerBWD" id="previous" />
+<img src="img/bluePlaypause.png" width="133" height="108" alt="Play Pause" class="playerPlay" id="play"/>
+<img src="img/blueFWD.png" alt="Next Song" name="next" class="playerFWD" id="next" title="Next Song" />
 </div>
 <div id="playing">
 <div id="currentstate"></div>
@@ -164,7 +164,7 @@ function MM_swapImage() { //v3.0
 		<option value = "track">Songs</option>
 		<option value = "playlist">Playlist</option>
 	</select>
-    <img src="img/search.png" alt="search" id="searchbutton" style="left;" />
+    <img src="img/search.png" alt="search" id="searchbutton" style="left;" class="playerSearch" />
     <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" />
     <div><div id="myAlternativeContent" style="right;"></div>
 	<div id="flashContent" style="right;"></div></div></div>

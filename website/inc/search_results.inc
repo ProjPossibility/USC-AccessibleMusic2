@@ -1,5 +1,6 @@
 <div id="results">
-	<div id="resultnum"><?=$i?>.</div>
+<li>
+	<!-- <div id="resultnum"><?=$i?>.</div> -->
 	<div id="searchalbum"><img src="<?=$icon?>" width="150" height="150" alt="Album cover" /></div>
 	<div id="type"><?=$type?></div>
 	<div id="info">
@@ -15,4 +16,5 @@
 		<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
 	</div>
 	<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
+</li>
 </div>
