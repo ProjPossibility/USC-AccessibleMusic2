@@ -113,30 +113,33 @@ function MM_swapImage() { //v3.0
 
 	function onResult(result) {
 		//document.getElementById('answer').innerHTML = result.text;
-		//speechapi.speak(result.text,"male");
+		speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
 			$('#play').click();
 			alert("play song");
-			speak("playing song "+$('#track').text(),"male");
+			//speak("playing song "+$('#track').text(),"male");
 		}
 		else if(result.text == "pause song"){
 			$('#play').click();
 			alert("pause song");
-			speak("paused song "+$('#track').text(),"male");
+			//speak("paused song "+$('#track').text(),"male");
 		}
 		else if(result.text == "next song"){
 			$('#next').click();
 			alert("next song");
-			speak($('#track').text(),"male");
+			//speak($('#track').text(),"male");
 		}
 		else if(result.text == "previous song"){
 			$('#previous').click();
 			alert("previous song");
-			speak($('#track').text(),"male");
+			//speak($('#track').text(),"male");
 		}
 	}
 	function onFinishTTS() {
 		//alert("finishTTS");
+	}
+	function speakNowPlaying(){
+		speak("now playing "+$('#track').text(),"male");
 	}
 	
 	
@@ -231,6 +234,7 @@ if ($currentUser) {
       <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','img/blackSearch.png',1)" onmousedown="MM_swapImage('Search','','img/invertedSearch.png',1)" onmouseup="MM_swapImage('Search','','img/blueSearch.png',1)"><img src="img/blueSearch.png" alt="Search" name="Search" width="100" height="81" border="0" id="searchbutton" class="playerSearch" /></a>
 	  
 	</form>
+	<a onclick="speakNowPlaying()">Now Playing</a>
       <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" /></div>
     <div style="float:right;">
     <div id="myAlternativeContent"></div>
