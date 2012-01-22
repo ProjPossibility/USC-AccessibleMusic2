@@ -150,7 +150,9 @@ function MM_swapImage() { //v3.0
 <div id="header-container">
 <div id="header">
 <div id="left">
-<div id="userID"><?php
+<div>
+<div style="float:left;"><a href="#search" onclick="document.getElementById('query').focus();">Jump to Search</a> || </div>
+<div id="userID" style="float:left;"><?php
 
 if ($currentUser) {
 	echo 'Hello, ' . $currentUser->result->firstName;
@@ -170,7 +172,7 @@ if ($currentUser) {
 	echo '<a href="signin.php">Sign In</a>';
 }
 
-?></div>
+?></div></div>
 <div id="albumcover"><img src="img/blank1x1.gif" id="art" width="150" height="150" /></div>
 </div>
 <div id="center">
