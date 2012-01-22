@@ -9,7 +9,7 @@
 <script src="js/shortcut.js"></script>
 <script type="text/javascript">
 	alert("runs before function.init");
-	function init(){
+	window.onload=function(){
 		alert("init'ing");
 		shortcut.add("z",function(){
 			alert("z");
@@ -48,7 +48,7 @@
 			'target':document
 		});
 	}
-	window.onload=init;
+	
 	</script>
 <title>Rdio Accessible</title>
 <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
