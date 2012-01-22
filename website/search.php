@@ -54,13 +54,13 @@ if ($search_type == 'artistalbums') {
 	echo '<pre>';
 	var_dump($resultsTemp);
 	die('crap out');
-	
+	/*
 	$searchResults = $resultsTemp->result;
 	
 	// fake the $query to the first result
 	if ( count($searchResults) ) != 0 {
 		$query = $searchResults[0]->artist;
-	}
+	}*/
 	
 } elseif ($search_type != 'all' ) {
 	//echo "normal search";
