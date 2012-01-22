@@ -38,6 +38,7 @@ $next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].$_SERVER['DOCUMENT_ROOT'].'/signin_auth.php';
   //$_SERVER['SCRIPT_NAME'];
 
+die($next_url);
 
 
 
