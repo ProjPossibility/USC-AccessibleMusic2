@@ -42,10 +42,9 @@ $(document).ready(function() {
 
   // set up the controls
   $('#play').click(function() {
-	  	var options = {initialPosition : 3};
 		if(myPlayState == "2"){
 			//player has been stopped, play from beginning
-			apiswf.rdio_play($('#play_key').val(), options);
+			apiswf.rdio_play($('#play_key').val());
 		}
 		else if(myPlayState == "1"){
 			//player is currentl yplaying, pause it
@@ -61,7 +60,6 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){
-	  alert("test");
   	  var search_id= document.getElementById("search_type");
   	  var search_type = search_id.options[search_id.selectedIndex];
   	  var phpURL = "player.php";

@@ -1,8 +1,12 @@
-function search_play( key ) {
+function search_play( key, type ) {
 	//alert(document.title);
 	var search_field = document.getElementById('play_key');
 	//alert(search_field.value);
 	search_field.value = key;
+	var searchsuggest = $('#searchsuggest');
+	if (type == 'a'){
+		
+	}
 	var play_button = $('#play');
 	var stop_button = $('#stop');
 	//alert(play_button);
