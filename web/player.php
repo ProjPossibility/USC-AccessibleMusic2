@@ -61,14 +61,11 @@ require_once('player_auth.php');
 			'propagate':true,
 			'target':document
 		});
-<<<<<<< HEAD
+
 		alert("test");
 		var phpURL = "search.php";
 		var ajax_load = "<img src='img/load.gif' alt='loading...d' />";
-		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");
-=======
->>>>>>> ef973f2d8c85b8f40337f586c75864aa2f7b60a2
-			
+		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");			
 	}
 	window.onload=init();
 	function searchEnter(){
