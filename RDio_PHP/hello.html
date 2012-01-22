@@ -39,6 +39,7 @@ THE SOFTWARE.
   <script type="text/javascript">
 	function init(){
 		shortcut.add("Up",function(){
+			document.getElementById('pause').click();
 			alert("Up pressed");
 		},{
 			'type':'keydown',
@@ -54,6 +55,7 @@ THE SOFTWARE.
 			'target':document
 		});
 		shortcut.add("Left",function(){
+			document.getElementById('next').click();
 			alert("Left pressed");
 		},{
 			'type':'keydown',
@@ -61,6 +63,7 @@ THE SOFTWARE.
 			'target':document
 		});
 		shortcut.add("Right",function(){
+			document.getElementById('previous').click();
 			alert("Right pressed");
 		},{
 			'type':'keydown',
