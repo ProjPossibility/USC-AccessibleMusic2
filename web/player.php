@@ -58,17 +58,17 @@ require_once('player_auth.php');
 			'target':document
 		});
 
+		alert("test");
 		var phpURL = "search.php";
-		var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");
-			
+		var ajax_load = "<img src='img/load.gif' alt='loading...d' />";
+		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");			
 	}
 	window.onload=init();
 	function searchEnter(){
 		$('#searchbutton').click();
 	}
 	</script>
-<title>Rdio Accessible</title>
+<title>aRdio - Accessible Rdio</title>
 <script type="text/javascript">
 <!--
 function MM_swapImgRestore() { //v3.0
@@ -214,7 +214,7 @@ if ($currentUser) {
 	<input id="play_key" style="visibility:hidden;" value="a455755" />
 
     <div><div style="float:left;">
-	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
+	<!a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ><!/a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
 		<option value = "all">All</option>
 		<option value="artist">Artist</option>
