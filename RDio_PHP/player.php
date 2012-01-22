@@ -9,7 +9,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $searchResults = $rdio->call("searchSuggestions", array("query" => "pumped up kicks"));
-foreach($searchResults->$result as $key => $value){
+foreach($searchResults->result as $key => $value){
 	echo $key . '\t' . $value->key . '\n';
 }
 
