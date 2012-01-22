@@ -113,16 +113,16 @@ function MM_swapImage() { //v3.0
 
 	function onResult(result) {
 		//document.getElementById('answer').innerHTML = result.text;
-		speechapi.speak(result.text,"male");
+		//speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
 			$('#play').click();
 			alert("play song");
-			speak($('#track').text(),"male");
+			speak("playing song "+$('#track').text(),"male");
 		}
 		else if(result.text == "pause song"){
 			$('#play').click();
 			alert("pause song");
-			speak($('#track').text(),"male");
+			speak("paused song "+$('#track').text(),"male");
 		}
 		else if(result.text == "next song"){
 			$('#next').click();
