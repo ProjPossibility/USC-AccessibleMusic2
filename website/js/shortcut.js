@@ -4,7 +4,6 @@
  * By Binny V A
  * License : BSD
  */
-alert("loading shortcut");
 shortcut = {
 	'all_shortcuts':{},//All the shortcuts are stored in this array
 	'add': function(shortcut_combination,callback,opt) {
