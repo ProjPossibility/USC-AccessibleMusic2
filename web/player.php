@@ -145,7 +145,6 @@ function MM_swapImage() { //v3.0
 	
 </script>
 
-
 </head>
 
 <body onload="MM_preloadImages('img/ardiologo2.jpg','img/blackBWD.png','img/invertedBWD.png','img/blueBWD.png','img/blackPlaypause.png','img/blackFWD.png','img/blackSearch.png')">
