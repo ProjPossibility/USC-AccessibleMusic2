@@ -52,7 +52,7 @@ $(document).ready(function() {
 		  cache: false;
 	  })
 	  var phpURL = "player.php";
-	  $('#search').load(phpURL);
+	  $('#search').html().load(phpURL);
   })
 });
 
