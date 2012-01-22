@@ -109,12 +109,15 @@ callback_object.playStateChanged = function playStateChanged(playState) {
 	  // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
 	  var statetext = $('#currentstate');
 	  if (playState == 1){
+		  alert("playing");
 		  stateText.text("Playing: ");
 	  } else if (playState == 2){
+		  alert("stopped");
 		  stateText.text("Stopped: ");
 	  } else if (playState == 3){
 		  stateText.text("Buffering...");
 	  } else {
+		  alert("paused");
 		  stateText.text("Paused: ");
 	  }
 	  myPlayState = playState;
