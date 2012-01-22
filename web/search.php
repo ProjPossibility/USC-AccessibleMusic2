@@ -75,7 +75,7 @@ if ($search_type == 'artistalbums') {
 	//echo "search suggestions";
 	
 	
-	$resultsTemp = $rdio->call("search", array("query" => $query, "types"=>("artist", "album", "song", "playlist")));
+	$resultsTemp = $rdio->call("search", array("query" => $query, "types"=>array("artist", "album", "song", "playlist")));
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
