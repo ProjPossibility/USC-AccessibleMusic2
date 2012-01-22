@@ -40,12 +40,12 @@ $(document).ready(function() {
 
 
   // set up the controls
-  $('#play').onclick(function() {
+  $('#play').click(function() {
     apiswf.rdio_play($('#play_key').val());
   });
-  $('#pause').onclick(function() { apiswf.rdio_pause(); });
-  $('#previous').onclick(function() { apiswf.rdio_previous(); });
-  $('#next').onclick(function() { apiswf.rdio_next(); });
+  $('#pause').click(function() { apiswf.rdio_pause(); });
+  $('#previous').click(function() { apiswf.rdio_previous(); });
+  $('#next').click(function() { apiswf.rdio_next(); });
 });
 
 
