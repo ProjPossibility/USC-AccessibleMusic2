@@ -27,16 +27,16 @@ if ($search_type != "All"){
 		$process[$i]["icon"] = $value->icon;
 		if(type != "r"){
 			if (type != "p"){
-				$process[i]["explicit"] = $value->isExplicit;
+				$process[$i]["explicit"] = $value->isExplicit;
 			} else {
-				$process[i]["artist"] = $value->owner;
-				$process[i]["artistKey"] = $value->ownerKey;
+				$process[$i]["artist"] = $value->owner;
+				$process[$i]["artistKey"] = $value->ownerKey;
 			}
-			$process[i]["length"] = $value->length;
-			$process[i]["artist"] = $value->artist;
-			$process[i]["artistKey"] = $value->artistKey;
+			$process[$i]["length"] = $value->length;
+			$process[$i]["artist"] = $value->artist;
+			$process[$i]["artistKey"] = $value->artistKey;
 		}
-		$i++;
+		($i)++;
 	}
 } else {
 	echo "search suggestions";
