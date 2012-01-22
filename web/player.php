@@ -61,8 +61,8 @@ require_once('player_auth.php');
 
 		var phpURL = "search.php";
 		var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-		$('#searchsuggest').html(ajax_load).load(phpURL, "query=blank&type=" + "onload");
-		alert('yo');
+		alert( $('#searchsuggest').html(ajax_load).load(phpURL, "query=blank&type=" + "onload") );
+		
 	
 	}
 	window.onload=init();
