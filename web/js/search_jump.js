@@ -21,6 +21,7 @@ function search_albums ( key ) {
 
 function search_songs( trackKeys, key ){
 	//Search songs for an album or a playlist
+	alert(trackKeys);
 	$keys_for_search = "";
 	for (var tempKey in trackKeys){
 		$keys_for_search + tempKey + ", ";
