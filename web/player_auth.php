@@ -71,5 +71,5 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
 	// not authenticated
 }
 
-*/
+
 ?>
