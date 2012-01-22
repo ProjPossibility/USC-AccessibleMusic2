@@ -28,6 +28,9 @@
 	function onResult(result) {
 		document.getElementById('answer').innerHTML = result.text;
 		speechapi.speak(result.text,"male");
+		if(result.text == "play song"){
+			alert("play song");
+		}
 	}
 
 	function onFinishTTS() {
