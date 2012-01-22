@@ -12,8 +12,15 @@ echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 
+
+var_dump($searchResults);
 foreach($searchResults->result as $key => $value){
-	echo $key . "   " . $value->key . "<br>";
+	//echo $key . "   " . $value->key . "<br>";
+?>
+	
+	
+	
+<?
 }
 
 ?>
