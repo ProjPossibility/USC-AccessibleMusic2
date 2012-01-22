@@ -1,6 +1,6 @@
 <?php
-include_once('lib/debug.php');
-include_once('lib/no_cache.php');
+include_once('../lib/debug.php');
+include_once('../lib/no_cache.php');
 
 # (c) 2011 Rdio Inc
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,8 +25,8 @@ include_once('lib/no_cache.php');
 
 session_start();
 
-require_once 'lib/rdio.php';
-require_once 'lib/rdio-credentials.php';
+require_once '../lib/rdio.php';
+require_once '../lib/rdio-credentials.php';
 
 # create an instance of the Rdio object with our consumer credentials
 $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
@@ -35,7 +35,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].'/RDio_PHP/a.php'; //$_SERVER['SCRIPT_NAME'];
+  "://" . $_SERVER['SERVER_NAME'].'../website/oauth/a.php'; //$_SERVER['SCRIPT_NAME'];
 
 
 
