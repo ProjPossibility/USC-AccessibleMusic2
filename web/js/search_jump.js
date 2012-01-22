@@ -21,6 +21,11 @@ function search_albums ( key ) {
 
 function search_songs( trackKeys, key ){
 	//Search songs for an album or a playlist
+	alert(trackKeys);
+	$keys_for_search = "";
+	for (var tempKey in trackKeys){
+		$keys_for_search + tempKey + ", ";
+	}
 	var phpURL = "search.php";
 	var ajax_load = "<img src='img/load.gif' alt='loading...'/>";
 	$('searchsuggest').html(ajax_load).load(phpURL, "query=" + trackKeys + "&type=trackKeys");

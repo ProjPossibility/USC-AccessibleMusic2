@@ -63,6 +63,7 @@ if ($search_type == 'artistalbums') {
 	}
 	
 } elseif($search_type == 'trackKeys'){
+	var_dump($query);
 	$resultsTemp = $rdio->call("get", array("query"=>$query));
 	
 	$searchResults = $resultsTemp;
