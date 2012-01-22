@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+require_once 'lib/no_cache.php';
+require_once 'lib/rdio.php';
+require_once 'lib/debug.php';
+
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -9,12 +17,7 @@
 </head>
 
 <body>
-
 <?php
-session_start();
-
-require_once 'lib/rdio.php';
-require_once 'lib/debug.php';
 
 define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
 define('CONSUMER_SECRET', 'pYvb45Xd5D');

@@ -3,7 +3,7 @@
 	<div id="searchalbum"><img src="<?=$icon?>" width="150" height="150" alt="Album cover" /></div>
 	<div id="type"><?=$type?></div>
 	<div id="info">
-		<div id="songName"><a href="javascript:search_play('<?=$key?>', <?=$type?>)"><?=$name?></a></div>
+		<div id="songName"><a href="javascript:search_play('<?=$key?>')"><?=$name?></a></div>
 		<div id="artistName"><a href="javascript:do_ajax_search_or_play('<?=$artistkey?>')"><?=$artist?></a></div>
 	</div>
 	<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
