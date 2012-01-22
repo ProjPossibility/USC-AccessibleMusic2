@@ -62,7 +62,7 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
-	  $type = $('#search_type')->options[0];
+	  $type = $('#search_type').options[0];
 	  alert($type);
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
