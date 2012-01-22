@@ -9,6 +9,7 @@ body {
 	font-size: large;
 }
 
+.align-right { float:right; margin: 0 0 15px 15px; }
 
 #header-wrap {
 	position: fixed;
@@ -82,3 +83,4 @@ body {
 #playing {
 	text-align: center;
 }
+

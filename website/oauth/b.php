@@ -1,6 +1,6 @@
 <?php
-include_once('lib/debug.php');
-include_once('lib/no_cache.php');
+include_once('../lib/debug.php');
+include_once('../lib/no_cache.php');
 
 # (c) 2011 Rdio Inc
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,8 +25,8 @@ include_once('lib/no_cache.php');
 
 session_start();
 
-require_once 'lib/rdio.php';
-require_once 'lib/rdio-credentials.php';
+require_once '../lib/rdio.php';
+require_once '../lib/rdio-credentials.php';
 
 # create an instance of the Rdio object with our consumer credentials
 $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
@@ -35,10 +35,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].'/RDio_PHP/a.php'; //$_SERVER['SCRIPT_NAME'];
-
-
-
+  "://" . $_SERVER['SERVER_NAME'].'/website/oauth/c.php'; //$_SERVER['SCRIPT_NAME'];
 
 
 
@@ -49,8 +46,17 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
   if ($_GET['oauth_verifier']) {
-	  echo 'C: SECRET???!!!';
-	  die('kill me now');
+    # we've been passed a verifier, that means that we're in the middle of
+    # authentication.
+    $rdio->complete_authentication($_GET['oauth_verifier']);
+    # save the new token in our session
+    $_SESSION['oauth_token'] = $rdio->token[0];
+    $_SESSION['oauth_token_secret'] = $rdio->token[1];
+    
+    echo 'token0: '.$rdio->token[0];
+    echo '<br>token1: '.$rdio->token[1];
+  } else {
+	  echo 'B: NO SECRET?';
 	}
 
 /*
@@ -58,7 +64,7 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   echo 'destroy!';
   session_destroy();
   die( $current_url);
-  */
+  
   
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
@@ -72,17 +78,19 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     foreach ($myPlaylists as $playlist) {
       ?><li><a href="<?= $playlist->shortUrl?>"><?=$playlist->name?></a></li><?
     }
-    ?></ul><a href="a.php?logout=1">Log out.</a><?
+    ?></ul><a href="?logout=1">Log out.</a><?
   } else {
-    die ('C: wtf auth failed? no current user??');
-    
     # auth failure, clear session
     session_destroy();
     # and start again
     header('Location: '.$current_url);
   }
-   
+   */
+   ?><a href="c.php">asdfasdfasdf to c</a><?php
+   //header('Location: '.$current_url);
 } else {
-	echo 'C: NO TOKENS?';
+	echo 'B: NO TOKENS?';
 }
+
+
 ?>

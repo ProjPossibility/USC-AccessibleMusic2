@@ -129,7 +129,7 @@ function MM_swapImage() { //v3.0
 
 </head>
 
-<body onload="MM_preloadImages('img/ardiologo2.jpg')">
+<body onload="MM_preloadImages('img/ardiologo2.jpg','img/blackBWD.png','img/invertedBWD.png','img/blueBWD.png','img/blackPlaypause.png','img/blackFWD.png','img/blackSearch.png')">
 <div id="header-wrap">
 <div id="header-container">
 <div id="header">
@@ -140,13 +140,12 @@ function MM_swapImage() { //v3.0
 <div id="center">
 <div id="buttons">
 <div id="apiswf" style="visibility:hidden;"></div>
-<img src="img/stop.png" alt="stop" name="stop" id="stop" style="visibility:hidden; position:absolute; left:-999px;" />
-<img src="img/blueBWD.png" alt="Previous Song" name="previous" class="playerBWD" id="previous" />
-<img src="img/bluePlaypause.png" width="133" height="108" alt="Play Pause" class="playerPlay" id="play"/>
-<img src="img/blueFWD.png" alt="Next Song" name="next" class="playerFWD" id="next" title="Next Song" />
-</div>
+ <img src="img/stop.png" alt="stop" name="stop" id="stop" style="visibility:hidden; position:absolute; left:-999px;" />
+<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Previous','','img/blackBWD.png',1)"  onmousedown="MM_swapImage('Previous','','img/invertedBWD.png',1)" onmouseup="MM_swapImage('Previous','','img/blueBWD.png',1)" ><img src="img/blueBWD.png" alt="Previous" name="Previous" width="133" height="108" border="0" id="previous" /></a>
+<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Play Pause','','img/blackPlaypause.png',1)" onmousedown="MM_swapImage('Play Pause','','img/invertedPlaypause.png',1)" onmouseup="MM_swapImage('Play Pause','','img/bluePlaypause.png',1)"><img src="img/bluePlaypause.png" alt="Play Pause " name="Play Pause" width="133" height="108" border="0" id="play" /></a>
+<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="forward" /></a></div>
 <div id="playing">
-<div id="currentstate"></div>
+  <div id="currentstate"></div>
 <div id="track" style="width:425px; text-decoration:underline;"></div>
 <div id="artist" style="width:425px;"></div>
 <div id="album" style="width: 425px; font-style:italic;" ></div>
@@ -159,8 +158,9 @@ function MM_swapImage() { //v3.0
 <div id="container">
 <div id="body">
 	<input id="play_key" style="visibility:hidden;" value="a455755" />
+<!--<<<<<<< HEAD
     <div>
-	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" a>
+	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
 		<input type="text" id="query" alt="Search box" style="left;"/>
 		<select id = "search_type" style="left;">
 			<option value = "all">All</option>
@@ -178,6 +178,29 @@ function MM_swapImage() { //v3.0
 	<div id="flashContent" style="right;"></div></div></div>
 <br>
 	<div id = "searchsuggest"></div>
+=======
+-->
+    <div><div style="float:left;">
+	
+	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
+	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
+		<option value = "all">All</option>
+		<option value="artist">Artist</option>
+		<option value = "album">Album</option>
+		<option value = "track">Songs</option>
+		<option value = "playlist">Playlist</option>
+	</select>
+      <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','img/blackSearch.png',1)" onmousedown="MM_swapImage('Search','','img/invertedSearch.png',1)" onmouseup="MM_swapImage('Search','','img/blueSearch.png',1)"><img src="img/blueSearch.png" alt="Search" name="Search" width="100" height="81" border="0" id="searchbutton" class="playerSearch" /></a>
+	  
+	</form>
+      <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" /></div>
+    <div style="float:right;">
+    <div id="myAlternativeContent"></div>
+	<div id="flashContent" style="float:right;"></div>
+    </div>
+    </div>
+<br />
+	<div id = "searchsuggest" style="clear:both;"></div>
 
 </div>
 </div>
