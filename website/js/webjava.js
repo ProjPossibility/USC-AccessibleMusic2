@@ -107,7 +107,16 @@ callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) 
 callback_object.playStateChanged = function playStateChanged(playState) {
 	  // The playback state has changed.
 	  // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
-	  $('#playState').text(playState);
+	  var statetext = $('#currentstate');
+	  if (playState == 1){
+		  stateText.text("Playing: ");
+	  } else if (playState == 2){
+		  stateText.text("Stopped: ");
+	  } else if (playState == 3){
+		  stateText.text("Buffering...");
+	  } else {
+		  stateText.text("Paused: ");
+	  }
 	  myPlayState = playState;
 }
 
