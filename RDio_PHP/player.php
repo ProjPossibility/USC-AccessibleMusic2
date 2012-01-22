@@ -1,3 +1,14 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Search</title>
+
+<link href="css/search.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
 <?php
 session_start();
 
@@ -114,19 +125,9 @@ foreach($process as $array){
 
 
 /*		
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Search</title>
-
-<!link href="search.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
 
 <!make explicit red>
-</body>
-</html>
 */
 ?>
+</body>
+</html>
