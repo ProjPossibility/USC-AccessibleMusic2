@@ -40,7 +40,6 @@ THE SOFTWARE.
 	function init(){
 		shortcut.add("Up",function(){
 			document.getElementById('pause').click();
-			alert("Up pressed");
 		},{
 			'type':'keydown',
 			'propagate':true,
@@ -48,23 +47,20 @@ THE SOFTWARE.
 		});
 		shortcut.add("Down",function(){
 			document.getElementById('play').click();
-			alert("Down pressed");
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 		shortcut.add("Left",function(){
-			document.getElementById('next').click();
-			alert("Left pressed");
+			document.getElementById('previous').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 		shortcut.add("Right",function(){
-			document.getElementById('previous').click();
-			alert("Right pressed");
+			document.getElementById('next').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
