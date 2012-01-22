@@ -18,8 +18,8 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].$_SERVER['DOCUMENT_ROOT'].'/player.php';
-
+  "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
+$next_url = substr($next_url,0,strrpos($next_url,'/')).'/player.php'; // get just the script path and make an absolute URL from it
 
 
 

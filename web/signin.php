@@ -37,7 +37,6 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 $next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
 $next_url = substr($next_url,0,strrpos($next_url,'/')).'/signin_auth.php'; // get just the script path and make an absolute URL from it
-die($next_url);
 
 
 
