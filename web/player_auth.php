@@ -16,10 +16,6 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 //echo 'yo';
 
 
-# work out what our current URL is
-$next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].$_SERVER['DOCUMENT_ROOT'];
-
 
 
 
