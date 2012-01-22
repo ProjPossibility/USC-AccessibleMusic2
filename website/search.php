@@ -47,7 +47,7 @@ if ($search_type != "all" && $search_type != "specific"){
 	//die('crap out');
 
 	$searchResults = $resultsTemp->result->results;
-} else {
+} else if (search_type != "specific") {
 	//echo "search suggestions";
 	
 	
@@ -57,7 +57,9 @@ if ($search_type != "all" && $search_type != "specific"){
 	}
 
 	$searchResults = $resultsTemp->result;
-}	
+} else {
+	
+}
 
 
 
