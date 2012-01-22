@@ -59,7 +59,7 @@ require_once('player_auth.php');
 		});
 		alert("test");
 		var phpURL = "search.php";
-		var ajax_load = "<img src='img/load.gif' alt='loading...' />";
+		var ajax_load = "<img src='img/load.gif' alt='loading...d' />";
 		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");
 			
 	}
@@ -68,7 +68,7 @@ require_once('player_auth.php');
 		$('#searchbutton').click();
 	}
 	</script>
-<title>Rdio Accessible</title>
+<title>aRdio - Accessible Rdio</title>
 <script type="text/javascript">
 <!--
 function MM_swapImgRestore() { //v3.0
