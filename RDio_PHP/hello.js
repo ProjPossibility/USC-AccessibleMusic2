@@ -63,7 +63,7 @@ $(document).ready(function() {
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
 	  $search_key = document.getElementById("search_key");
-	  $search_type = $search_key.options($search_key.selectedIndex);
+	  $search_type = $search_key.options[$search_key.selectedIndex];
 	  alert($search_type);
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
