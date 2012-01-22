@@ -110,6 +110,14 @@ callback_object.playingTrackChanged = function playingTrackChanged(playingTrack,
     $('#album').text(playingTrack['album']);
     $('#artist').text(playingTrack['artist']);
     $('#art').attr('src', playingTrack['icon']);
+    $('#searchbutton').click(function(){ 
+  	  var search_id= document.getElementById("search_type");
+  	  var search_type = search_id.options[search_id.selectedIndex];
+  	  var phpURL = "player.php";
+  	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
+  	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
+  	  //$('#searchsuggest').load(phpURL);
+    });
   }
 }
 
