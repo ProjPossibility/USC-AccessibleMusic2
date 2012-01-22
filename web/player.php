@@ -107,8 +107,8 @@ function MM_swapImage() { //v3.0
 	speechapi.setup("eli","password",onResult, 
 			onFinishTTS, onLoaded, "flashContent");
 
-	function speak() {
-		speechapi.speak(document.getElementById('words').value,"male");
+	function speak(text) {
+		speechapi.speak(text,"male");
 	}
 
 	function onResult(result) {
