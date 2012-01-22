@@ -38,7 +38,6 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 $resultsTemp = '';
 
-
 // each call returns results slightly differently
 if ($search_type == 'artistalbums') {
 	// this is the type that you get when you search directly by artistkey

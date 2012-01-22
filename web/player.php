@@ -154,7 +154,6 @@ function MM_swapImage() { //v3.0
 	
 </script>
 
-
 </head>
 
 <body onload="MM_preloadImages('img/ardiologo2.jpg','img/blackBWD.png','img/invertedBWD.png','img/blueBWD.png','img/blackPlaypause.png','img/blackFWD.png','img/blackSearch.png')">
@@ -167,7 +166,7 @@ function MM_swapImage() { //v3.0
 <div id="userID" style="font-size:smaller;"><?php
 
 if ($currentUser) {
-	echo 'Hello, ' . $currentUser->result->firstName;
+	echo 'Hi, ' . $currentUser->result->firstName;
 	
 	/*
     $myPlaylists = $rdio->call('getPlaylists')->result->owned;
