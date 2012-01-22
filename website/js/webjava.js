@@ -111,6 +111,7 @@ callback_object.playingTrackChanged = function playingTrackChanged(playingTrack,
     $('#artist').text(playingTrack['artist']);
     $('#art').attr('src', playingTrack['icon']);
     $('#searchbutton').click(function(){ 
+      alert("test");
   	  var search_id= document.getElementById("search_type");
   	  var search_type = search_id.options[search_id.selectedIndex];
   	  var phpURL = "player.php";
