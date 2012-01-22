@@ -41,7 +41,18 @@ $(document).ready(function() {
 
   // set up the controls
   $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
+		if(myPlayState == "2"){
+			//player has been stopped, play from beginning
+			apiswf.rdio_play($('#play_key').val());
+		}
+		else if(myPlayState == "1"){
+			//player is currentl yplaying, pause it
+			apiswf.rdio_pause();
+		}
+		else if(myPlayState == "0"){
+			//player has been paused, play starting at current position
+			apiswf.rdio_play();
+		}
   });
   $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
