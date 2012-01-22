@@ -8,7 +8,6 @@
 			<div id="empty_div1">&nbsp;</div>
 		<?php } else if ($key != '') { ?>
 			<div id="play"><a href="javascript:search_play('<?=$key?>')">Play</a></div>
-			<?var_dump($trackKeys)?>
 			<div id="albumsearch"><a href="javascript:search_songs('<?=$trackKeys?>','<?=$key?>')"><?=$name?></a></div>
 		<?php }?>
 		
