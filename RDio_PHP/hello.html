@@ -26,6 +26,7 @@ THE SOFTWARE.
   <script src="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js"></script>
   <script src="token.js"></script>
   <script src="hello.js"></script>
+  <script src="lib/shortcut.js"></script>
   <style type="text/css">
     #freq div {
       height: 10px;
@@ -35,6 +36,40 @@ THE SOFTWARE.
       display: none;
     }
   </style>
+  <script type="text/javascript">
+	function init(){
+		shortcut.add("Up",function(){
+			alert("Up pressed");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("Down",function(){
+			document.getElementById('play').click();
+			alert("Down pressed");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("Left",function(){
+			alert("Left pressed");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("Right",function(){
+			alert("Right pressed");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+	}
+	window.onload=init;
+	</script>
 </head>
 <body>
 <h1>Rdio Playback API simple example</h1>
