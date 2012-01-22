@@ -25,6 +25,7 @@ echo 'alskjfdlsakdjflsakdjf';
 
 die('yo');
 
+
 session_start();
 
 require_once 'lib/rdio.php';
