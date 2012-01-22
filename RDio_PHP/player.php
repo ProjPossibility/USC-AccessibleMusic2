@@ -26,7 +26,7 @@ if ($searchResults->status != "ok") {
 	die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 }
 
-//var_dump($searchResults);
+var_dump($searchResults);
 
 echo '<pre>';
 $numresults = count($searchResults->result);
