@@ -50,8 +50,8 @@ $(document).ready(function() {
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
 	  alert("Clicked");
-	  var phpURL = "player.php";
-	  $('#searchsuggest').load(phpURL);
+	  //var phpURL = "player.php";
+	  //$('#searchsuggest').load(phpURL);
   })
 });
 
