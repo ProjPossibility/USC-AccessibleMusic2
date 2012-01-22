@@ -95,6 +95,7 @@ echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>
 echo "<ol>";
 
 foreach($searchResults as $value) {
+	var_dump($value);
 	$type = $value->type;
 	$icon = $value->icon;
 	
