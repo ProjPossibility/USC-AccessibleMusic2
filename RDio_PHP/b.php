@@ -83,7 +83,8 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     header('Location: '.$current_url);
   }
    */
-   header('Location: '.$current_url);
+   ?><a href="c.php">asdfasdfasdf to c</a><?php
+   //header('Location: '.$current_url);
 } else {
 	echo 'B: NO TOKENS?';
 }
