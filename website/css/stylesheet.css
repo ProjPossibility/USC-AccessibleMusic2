@@ -83,19 +83,3 @@ body {
 	text-align: center;
 }
 
-.playerBWD {
-	background-image: url(../img/blueBWD.png);
-}
-.playerBWD: hover {
-	background-image:url(../img/blackBWD.png);
-}
-
-
-.playerPlay {
-}
-
-.playerFWD {
-}
-
-.playerSearch {
-}
