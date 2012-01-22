@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<title>Advanced keypress navigation with jQuery</title>
+<link rel="stylesheet" type="text/css" href="css/scroll.css"/>
+<script src="jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/scroll.js"></script>
+<script src="lib/shortcut.js"></script>
+  <script type="text/javascript">
+  
+	var currentSelection = 0;
+	var currentUrl = '';
+	function init(){
+		shortcut.add("Up",function(){
+			navigate('up');
+			//alert("up");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("Down",function(){
+			navigate('down');
+			//alert("down");
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("Enter",function(){
+			//alert("enter");
+			if(currentUrl != ''){
+				window.location = currentUrl;
+			}
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		// Add data to let the hover know which index they have
+	for(var i = 0; i < $("#searchsuggest li a").size(); i++) {
+		$("#searchsuggest li a").eq(i).data("number", i);
+	}
+	
+	// Simulote the "hover" effect with the mouse
+	$("#searchsuggest li a").hover(
+		function () {
+			currentSelection = $(this).data("number");
+			setSelected(currentSelection);
+		}, function() {
+			$("#searchsuggest li a").removeClass("itemhover");
+			currentUrl = '';
+		}
+	);
+	}
+	window.onload=init;
+	function navigate(direction) {
+	// Check if any of the menu items is selected
+	if($("#searchsuggest li .itemhover").size() == 0) {
+		currentSelection = -1;
+	}
+	
+	if(direction == 'up' && currentSelection != -1) {
+		if(currentSelection != 0) {
+			currentSelection--;
+		}
+	} else if (direction == 'down') {
+		if(currentSelection != $("#searchsuggest li").size() -1) {
+			currentSelection++;
+		}
+	}
+	setSelected(currentSelection);
+}
+
+function setSelected(menuitem) {
+	$("#searchsuggest li a").removeClass("itemhover");
+	$("#searchsuggest li a").eq(menuitem).addClass("itemhover");
+	currentUrl = $("#searchsuggest li a").eq(menuitem).attr("href");
+}
+  </script>
+</head>
+<body>
+<div id="wrapper">
+	<h1>Advanced keypress navigation with jQuery</h1>
+	<p>The blue box below shows a navigation list, containing several links to different web pages. You can use your mouse to select the links, but you can also use your arrow keys (<em>&quot;Up&quot;</em> and <em>&quot;Down&quot;</em>) to navigate through the list. Hit <em>&quot;Enter&quot;</em> (or <em>&quot;Return&quot;</em>) to follow that link when using your keyboard.</p>
+	<div id="searchsuggest">
+		
+			<li><a href="http://www.marcofolio.net/" title="Marcofolio.net">Marcofolio.net</a></li>
+			<li><a href="http://feeds2.feedburner.com/marcofolio" title="Subscribe to Marcofolio">Marcofolio RSS feed</a></li>
+			<li><a href="http://twitter.com/marcofolio" title="Follow Marcofolio on Twitter">Marcofolio on Twitter</a></li>
+			<li><a href="http://www.marcofolio.net/webdesign/a_fancy_apple.com-style_search_suggestion.html" title="A fancy Apple.com-style search suggestion">Apple.com-style search suggestion</a></li>
+			<li><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+		
+	</div>
+	<p>This example has been created using the superb <a href="http://jquery.com/">jQuery</a> JavaScript library by <a href="http://www.marcofolio.net/" title="Marcofolio.net">Marcofolio.net</a>. When using this kind of techniques, you can easily improve the user experience of any visitor and could be combined with other techniques like <a href="http://www.marcofolio.net/webdesign/a_fancy_apple.com-style_search_suggestion.html" title="A fancy Apple.com-style search suggestion">the Apple.com-style search suggestion</a>.</p>
+</div>
+</body>
+</html>
