@@ -25,8 +25,8 @@ if ($search_type != "All"){
 		$process[$i]["type"] = $value->type;
 		$process[$i]["key"] = $value->key;
 		$process[$i]["icon"] = $value->icon;
-		if(type != "r"){
-			if (type != "p"){
+		if($value->type != "r"){
+			if ($value->type != "p"){
 				$process[$i]["explicit"] = $value->isExplicit;
 			} else {
 				$process[$i]["artist"] = $value->owner;
