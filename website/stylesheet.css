@@ -3,23 +3,57 @@
 
 body {
 	background-color: #FFF;
-	text-align: center;
+	margin: 0px;
+	padding: 0px;
 }
 
-#banner {
-	text-align: left;
-	width: 960px;
+
+#header-wrap {
 	position: fixed;
-	z-index:1000;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
-.playerButtons {
+#header-container {
+	height: 200px;
+	background-color:#999;
+}
+
+#header {
+	width: 940px;
+	margin: 0 auto;
 	position: relative;
-	right: 0px;
 }
 
-#body {
-	width: 960px;
-	top: 200px;
+#container {
+	width: 940px;
+	margin: 0 auto;
+	font-size: 1.4em;
+	overflow: auto;
+	padding: 200px 0 40px;
+}
+
+#content {
+	float: left;
+	width: 940px;
+}
+
+
+#footer-wrap {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+
+#footer-container {
+	height: 40px;
+	background-color:#999;
+}
+
+#footer {
+	width: 940px;
+	margin: 0 auto;
 	position: relative;
 }
