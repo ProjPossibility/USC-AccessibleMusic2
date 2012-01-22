@@ -22,6 +22,7 @@ THE SOFTWARE.
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
+var myPlayState = "2";
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
@@ -41,18 +42,40 @@ $(document).ready(function() {
 
 
   // set up the controls
+    // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
+	if(myPlayState == "2"){
+		//player has been stopped, play from beginning
+		apiswf.rdio_play($('#play_key').val());
+	}
+	else if(myPlayState == "1"){
+		//player is currentl yplaying, pause it
+		apiswf.rdio_pause();
+	}
+	else if(myPlayState == "0"){
+		//player has been paused, play starting at current position
+		apiswf.rdio_play();
+	}
   });
   $('#stop').click(function() { apiswf.rdio_stop(); });
-  $('#pause').click(function() { apiswf.rdio_pause(); });
+  $('#pause').click(function() { 
+	if(myPlayState == "0"){
+		//player is currently paused, start playing again
+		apiswf.rdio_play();
+	}
+	else{
+		//play is not currently puased, pause it
+		apiswf.rdio_pause(); 
+	}
+  });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
-	  alert("Clicked");
+	  var search_id= document.getElementById("search_type");
+	  var search_type = search_id.options[search_id.selectedIndex];
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
+	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
 	  //$('#searchsuggest').load(phpURL);
   });
 });
@@ -96,6 +119,7 @@ callback_object.playStateChanged = function playStateChanged(playState) {
   // The playback state has changed.
   // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#playState').text(playState);
+  myPlayState = playState;
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
