@@ -28,7 +28,7 @@ foreach($searchResults->result as $value){
 	
 	//<img src="<php=$searchResults? >">
 ?>
-	var_dump($value); ?>
+	<?php var_dump($value); ?>
 	
 	
 	
