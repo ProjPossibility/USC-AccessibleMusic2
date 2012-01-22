@@ -12,13 +12,12 @@ $search_type = $_GET["type"];
 echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-$searchResults = 0;
 $searchResults = $rdio->call("searchSuggestions", array("query" => $query));
-// if (&search_type !== 0){
-// 	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
-// } else {
-// 	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>array($search_type)));
-// }
+if (&search_type !== 0){
+	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
+} else {
+	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>array($search_type)));
+}
 
 
 if ($searchResults->status != "ok") {
