@@ -26,10 +26,9 @@ echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
 foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
 	
-	//<img src="<php=$searchResults? >">
+	//var_dump($value);
+	echo $value->key;
 ?>
-	<?php var_dump($value); ?>
-	
 	
 	
 <?
