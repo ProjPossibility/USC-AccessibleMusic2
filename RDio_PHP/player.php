@@ -20,7 +20,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
 $search_type = $_GET["type"];
-echo $search_type;
+//echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
@@ -32,7 +32,7 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $resultsTemp = '';
 
 if ($search_type != "all"){
-	echo "normal search";
+	//echo "normal search";
 	
 	
 	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
@@ -40,13 +40,13 @@ if ($search_type != "all"){
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
 	
-	echo '<pre>';
-	var_dump($resultsTemp);
-	die('crap out');
+	//echo '<pre>';
+	//var_dump($resultsTemp);
+	//die('crap out');
 
 	$searchResults = $resultsTemp->result->results;
 } else {
-	echo "search suggestions";
+	//echo "search suggestions";
 	
 	
 	$resultsTemp = $rdio->call("searchSuggestions", array("query" => $query));
@@ -88,6 +88,14 @@ foreach($searchResults as $value) {
 			$artistkey = $value->ownerKey;
 		}
 		$length = $value->length;
+	}
+	
+	// expand the text out from the characters for printing
+	switch($type) {
+		case 'r':	$type = 'Artist';	break;
+		case 't':	$type = 'Track';	break;
+		case 'a':	$type = 'Album';	break;
+		case 'p':	$type = 'Playlist';	break;
 	}
 	
 	
