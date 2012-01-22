@@ -18,8 +18,8 @@ body {
 }
 
 #header-container {
-	height: 200px;
-	background-color:#FFF;
+	height: 220px;
+	background-color: #CCC;
 }
 
 #header {
@@ -34,7 +34,7 @@ body {
 	margin: 0 auto;
 	font-size: 1.4em;
 	overflow: auto;
-	padding: 200px 0 40px;
+	padding: 220px 0 10px;
 }
 
 #content {
