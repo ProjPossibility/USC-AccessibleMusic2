@@ -25,9 +25,7 @@ var apiswf = null;
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
-	$.ajaxSetup({
-		  cache: false;
-	  })
+	
   var flashvars = {
     'playbackToken': playback_token, // from token.js
     'domain': domain,                // from token.js
