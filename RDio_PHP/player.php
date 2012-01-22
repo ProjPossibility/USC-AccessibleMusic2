@@ -9,7 +9,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
 $search_type = $_GET["type"];
-echo $search_type;
+//echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
@@ -28,6 +28,10 @@ if ($search_type != "All"){
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
+	
+	echo '<pre>';
+	var_dump($resultsTemp);
+	die('crap out');
 
 	$searchResults = $resultsTemp->result->results;
 } else {
