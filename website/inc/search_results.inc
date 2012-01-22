@@ -1,5 +1,5 @@
 <div id="results">
-	<div id="resultnum"><?=$i?>.</div>
+	<div id="resultnum"><li /></div>
 	<div id="searchalbum"><img src="<?=$icon?>" width="150" height="150" alt="Album cover" /></div>
 	<div id="type"><?=$type?></div>
 	<div id="info">
