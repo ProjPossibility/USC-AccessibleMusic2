@@ -10,6 +10,7 @@
   <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>
   <script language="JavaScript" type="text/javascript" >
 
+		var words = ["play song", "pause song", "next song", "previous song"];
 
         function onLoaded() {
   		speechapi.setupRecognition("SIMPLE", document.getElementById('words').value,false,false);
@@ -27,10 +28,19 @@
 
 	function onResult(result) {
 		document.getElementById('answer').innerHTML = result.text;
-		speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
 			alert("play song");
 		}
+		else if(result.text == "pause song"){
+			alert("pause song");
+		}
+		else if(result.text == "next song"){
+			alert("next song");
+		}
+		else if(result.text == "previous song"){
+			alert("previous song");
+		}
+		speechapi.speak(result.text,"male");
 	}
 
 	function onFinishTTS() {
@@ -43,17 +53,13 @@
 
 </head>
 <body>
-<h4>Parrot Demo</h4>
-<p>First you will need to allow access to your microphone in the "Adobe Flash Player Settings" popup. Then hold the "press to speak" button and say a number 
-between one and ten.  Release the button when you are done speaking.  If you are in a quiet environment or have a headset, try to enable automatic speech
-detection mode.  When automatic mode is enabled, you do not need to press to speak; the system will detect speech for you.  You can also change the grammars
-by modifying the comma separated list in the text entry field.</p>
+
 
 <br>
 <table border="1" width=>
 <tr>
   <td>Words</td>
-  <td><input type="text" id="words" value="play song, pause song, next song, previous song" size="100"/><input type="button" value="Reset Grammar" onclick="ResetGrammar()"></td>
+  <!--=<td><input type="text" id="words" value="play song, pause song, next song, previous song" size="100"/><input type="button" value="Reset Grammar" onclick="ResetGrammar()"></td>-->
 </tr>
 <tr>
   <td>RESULT</td>
