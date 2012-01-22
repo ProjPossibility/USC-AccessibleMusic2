@@ -44,15 +44,15 @@ $(document).ready(function() {
   // set up the controls
     // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#play').click(function() {
-	if(myPlayState ==2){
+	if(myPlayState =='2'){
 		//player has been stopped, play from beginning
 		apiswf.rdio_play($('#play_key').val());
 	}
-	else if(myPlayState == 1){
+	else if(myPlayState == '1'){
 		//player is currentl yplaying, pause it
 		apiswf.rdio_pause();
 	}
-	else if(myPlayState == 0){
+	else if(myPlayState == '0'){
 		//player has been paused, play starting at current position
 		apiswf.rdio_play();
 	}
