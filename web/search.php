@@ -37,7 +37,6 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 
 $resultsTemp = '';
-var_dump($query);
 
 
 // each call returns results slightly differently
@@ -64,10 +63,11 @@ if ($search_type == 'artistalbums') {
 	
 } elseif($search_type == "trackKeys"){
 	
-	
-	$resultsTemp = $rdio->call("get", array("query"=>"t4906983, t4907053, t4164073, t2813247, t3483547"));
-	
-	$searchResults = $resultsTemp;
+	$resultsTemp = $rdio->call("get", array("keys"=>$query));
+	if ($resultsTemp->status != "ok") {
+		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
+	}
+	$searchResults = $resultsTemp->result;
 
 }elseif ($search_type != 'all' ) {
 	//echo "normal search";
@@ -112,9 +112,12 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
-	$track_temp = @$value->trackKeys;
-	$trackKeys = implode(",", $track_temp);
-	var_dump($trackKeys);
+	if ($type == 'p' || $type == 'a'){
+		$track_temp = $value->trackKeys;
+		$trackKeys = implode(",", $track_temp);
+	
+		var_dump($trackKeys);
+	}
 	if($type != "r"){
 		if ($type != "p"){
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist
