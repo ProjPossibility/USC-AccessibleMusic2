@@ -40,7 +40,6 @@ $(document).ready(function() {
 
 
   // set up the controls
-  alert($('#play_key').val());
   $('#play').click(function() {
     apiswf.rdio_play($('#play_key').val());
   });
