@@ -90,7 +90,7 @@ function MM_swapImage() { //v3.0
 
         var flashvars = {speechServer : "http://www.speechapi.com:8000/speechcloud"};
 	//var flashvars = {speechServer : "rtmp://www.speechapi.com:1935/firstapp"};
-        var params = {allowscriptaccess : "always"};
+        var params = {allowscriptaccess : "always", wmode : "opaque"};
 	var attributes = {};
 	attributes.id = "flashContent";
 	swfobject.embedSWF("http://www.speechapi.com/static/lib/speechapi-1.6.swf", "myAlternativeContent", "215", "138", "9.0.28", false,flashvars, params, attributes);
