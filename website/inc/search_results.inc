@@ -15,6 +15,6 @@
 		<div id="empty_div2">&nbsp;</div>
 		<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
 	</div>
-</li>
 	<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
+</li>
 </div>
