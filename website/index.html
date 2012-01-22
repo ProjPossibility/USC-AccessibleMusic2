@@ -51,7 +51,9 @@
 		});
 	}
 	window.onload=init();
-	
+	function searchEnter(){
+		$('#searchbutton').click();
+	}
 	</script>
 <title>Rdio Accessible</title>
 <script type="text/javascript">
@@ -156,7 +158,32 @@ function MM_swapImage() { //v3.0
 <div id="container">
 <div id="body">
 	<input id="play_key" style="visibility:hidden;" value="a455755" />
-    <div><div style="float:left;"><input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
+<!--<<<<<<< HEAD
+    <div>
+	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
+		<input type="text" id="query" alt="Search box" style="left;"/>
+		<select id = "search_type" style="left;">
+			<option value = "all">All</option>
+			<option value="artist">Artist</option>
+			<option value = "album">Album</option>
+			<option value = "track">Songs</option>
+			<option value = "playlist">Playlist</option>
+		</select>
+		<img src="img/search.png" alt="search" id="searchbutton" style="left;" class="playerSearch" />
+	
+	</form>
+
+   <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" />
+    <div><div id="myAlternativeContent" style="right;"></div>
+	<div id="flashContent" style="right;"></div></div></div>
+<br>
+	<div id = "searchsuggest"></div>
+=======
+-->
+    <div><div style="float:left;">
+	
+	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
+	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
 		<option value = "all">All</option>
 		<option value="artist">Artist</option>
 		<option value = "album">Album</option>
@@ -164,6 +191,8 @@ function MM_swapImage() { //v3.0
 		<option value = "playlist">Playlist</option>
 	</select>
       <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','img/blackSearch.png',1)" onmousedown="MM_swapImage('Search','','img/invertedSearch.png',1)" onmouseup="MM_swapImage('Search','','img/blueSearch.png',1)"><img src="img/blueSearch.png" alt="Search" name="Search" width="100" height="81" border="0" id="searchbutton" class="playerSearch" /></a>
+	  
+	</form>
       <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" /></div>
     <div style="float:right;">
     <div id="myAlternativeContent"></div>
