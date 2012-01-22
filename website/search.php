@@ -47,7 +47,7 @@ if ($search_type != "all" && $search_type != "specific"){
 	//die('crap out');
 
 	$searchResults = $resultsTemp->result->results;
-} else if (search_type != "specific") {
+} else if ($search_type != "specific") {
 	//echo "search suggestions";
 	
 	
@@ -72,16 +72,15 @@ $i = 1; //result #
 echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
 
 foreach($searchResults as $value) {
-	$name = $value->name;
 	$type = $value->type;
-	$key = $value->key;
 	$icon = $value->icon;
 	
 	$explicit = '';
 	$length = '';
 	$artist = '';
 	$artistkey = '';
-
+	$name = '';
+	$key = '';
 	if($type != "r"){
 		if ($type != "p"){
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist
@@ -91,7 +90,12 @@ foreach($searchResults as $value) {
 			$artist = $value->owner;
 			$artistkey = $value->ownerKey;
 		}
+		$key = $value->key;
+		$name = $value->name;
 		$length = $value->length;
+	} else {
+		$artist = $value->name;
+		$artistkey = $value->key;
 	}
 	
 	// expand the text out from the characters for printing
