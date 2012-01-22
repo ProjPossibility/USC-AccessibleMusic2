@@ -22,7 +22,7 @@ THE SOFTWARE.
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
-var myPlayState = 2;
+var myPlayState = "2";
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
@@ -118,9 +118,6 @@ callback_object.playStateChanged = function playStateChanged(playState) {
   myPlayState = playState;
   if(IsNumeric(myPlayState)){
 	alert("playstate is numeric");
-	}
-  if(IsNan(myPlayState)){
-	alert("playstate is not numeric");
 	}
 }
 
