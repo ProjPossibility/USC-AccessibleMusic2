@@ -36,7 +36,7 @@ if ($search_type != "All"){
 // 			$process[i]["artist"] = $value->artist;
 // 			$process[i]["artistKey"] = $value->artistKey;
 // 		}
-// 		i++;
+		i++;
 	}
 } else {
 	echo "search suggestions";
