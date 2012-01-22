@@ -153,7 +153,29 @@ function MM_swapImage() { //v3.0
 <div id="header-container">
 <div id="header">
 <div id="left">
-<div id="userID">sign in</div>
+<div>
+<div style="font-size:smaller;"><a href="#search" onclick="document.getElementById('query').focus();">Jump to Search</a></div>
+<div id="userID" style="font-size:smaller;"><?php
+
+if ($currentUser) {
+	echo 'Hello, ' . $currentUser->result->firstName;
+	
+	/*
+    $myPlaylists = $rdio->call('getPlaylists')->result->owned;
+    
+    # list them
+    foreach ($myPlaylists as $playlist) {
+      ? ><li><a href="< ?= $playlist->shortUrl?>">< ?=$playlist->name? ></a></li>< ?
+    }
+    ? ></ul>
+    */
+    echo ' <a href="signout.php">Log out</a>';
+
+} else {
+	echo '<a href="signin.php">Sign In</a>';
+}
+
+?></div></div>
 <div id="albumcover"><img src="img/blank1x1.gif" id="art" width="150" height="150" /></div>
 </div>
 <div id="center">
@@ -200,8 +222,8 @@ function MM_swapImage() { //v3.0
 =======
 -->
     <div><div style="float:left;">
-	
-	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
+    <a href="#search" onclick="document.getElementById('query').focus();">SEARCHASDFGH</a>
+	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
 		<option value = "all">All</option>
 		<option value="artist">Artist</option>
