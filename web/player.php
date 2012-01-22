@@ -2,6 +2,7 @@
 
 // includes code that will properly deal with the 
 // authentication, detecting state and all
+$currentUser = 0;
 require_once('player_auth.php');
 
 ?>

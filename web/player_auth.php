@@ -8,7 +8,7 @@ session_start();
 
 require_once 'lib/rdio.php';
 require_once 'lib/rdio-credentials.php';
-/*
+
 
 # create an instance of the Rdio object with our consumer credentials
 $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
@@ -17,7 +17,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 
 # work out what our current URL is
-$current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
+$next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].'../website/oauth/a.php'; //$_SERVER['SCRIPT_NAME'];
 
 
@@ -33,7 +33,7 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     $_SESSION['oauth_token_secret']);
   if ($_GET['oauth_verifier']) {
 	  echo 'C: SECRET???!!!';
-	  die('kill me now');
+	  die('should not have a secret passed to me here, please debug');
 	}
 
 
