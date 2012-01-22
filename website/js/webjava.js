@@ -56,7 +56,7 @@ $(document).ready(function() {
 		}
   });
   $('#stop').click(function() { apiswf.rdio_stop(); });
-  $('#pause').click(function() { apiswf.rdio_pause(); });
+//  $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){
