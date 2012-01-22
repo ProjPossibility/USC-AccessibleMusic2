@@ -25,14 +25,17 @@
 	float:left;
 }
 
-#songName {
-	width: 170px;
+#info {
+	width: 340px;
 	float:left;
 }
 
+#songName {
+	width: 340px;
+}
+
 #artistName {
-	width: 170px;
-	float:left;
+	width: 340px;
 }
 
 #explicit {

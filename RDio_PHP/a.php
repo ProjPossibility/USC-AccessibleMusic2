@@ -35,7 +35,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].'/b.php'; //$_SERVER['SCRIPT_NAME'];
+  "://" . $_SERVER['SERVER_NAME'].'/RDio_PHP/b.php'; //$_SERVER['SCRIPT_NAME'];
 
 
 
@@ -47,7 +47,8 @@ $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   $_SESSION['oauth_token'] = $rdio->token[0];
   $_SESSION['oauth_token_secret'] = $rdio->token[1];
 
-  header('Location: '.$authorize_url);
+  //header('Location: '.$authorize_url);
+  ?><a href="<?=$authorize_url?>">asdfasdfasdf to b</a><?php
 
 
 ?>
