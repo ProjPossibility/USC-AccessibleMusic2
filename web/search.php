@@ -62,10 +62,15 @@ if ($search_type == 'artistalbums') {
 		$query = $searchResults[0]->artist;
 	}
 	
-} elseif ($search_type != 'all' ) {
+} elseif($search_type == 'trackKeys'){
+	$resultsTemp = $rdio->call("get", array("query"=>$query));
+	
+	$searchResults = $resultsTemp;
+
+}elseif ($search_type != 'all' ) {
 	//echo "normal search";
 	
-	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
+	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type), "extras"=>"trackKeys"));
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
@@ -75,7 +80,7 @@ if ($search_type == 'artistalbums') {
 	//echo "search suggestions";
 	
 	
-	$resultsTemp = $rdio->call("search", array("query" => $query, "types"=>"artist, album, track, playlist"));
+	$resultsTemp = $rdio->call("search", array("query" => $query, "types"=>"artist, album, track, playlist", "extras"=>"trackKeys"));
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
@@ -105,6 +110,7 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
+	$trackKeys = @$value->trackKeys;
 	if($type != "r"){
 		if ($type != "p"){
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist

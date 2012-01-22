@@ -19,6 +19,9 @@ function search_albums ( key ) {
 	$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + key + "&type=artistalbums");
 }
 
-function search_songs( key ){
+function search_songs( trackKeys, key ){
 	//Search songs for an album or a playlist
+	var phpURL = "search.php";
+	var ajax_load = "<img src='img/load.gif' alt='loading...'/>";
+	$('searchsuggest').html(ajax_load).load(phpURL, "query=" + trackKeys + "&type=trackKeys");
 }
