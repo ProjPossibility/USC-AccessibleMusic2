@@ -50,7 +50,7 @@ $(document).ready(function() {
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchsuggest').click(function(){ 
 	  alert("Clicked");
-	  var phpURL = "player.php";
+//	  var phpURL = "player.php";
 	  //$('#search').load(phpURL);
   })
 });
