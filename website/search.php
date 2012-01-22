@@ -36,21 +36,33 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 $resultsTemp = '';
 
-if ($search_type != "all" && $search_type != "specific"){
-	//echo "normal search";
+
+
+// each call returns results slightly differently
+if ($search_type == 'artistalbums') {
+	// this is the type that you get when you search directly by artistkey
 	
+	// this occurs when you click on an artist in the search results
+	
+	$resultsTemp = $rdio->call('getAlbumsForArtist', array("artist"=>$query));
+	if ($resultsTemp->status != "ok") {
+		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
+	}
+	
+	echo '<pre>';
+	var_dump($resultsTemp);
+	die('crap out');
+	
+} elseif ($search_type != 'all' ) {
+	//echo "normal search";
 	
 	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
-	
-	//echo '<pre>';
-	//var_dump($resultsTemp);
-	//die('crap out');
 
 	$searchResults = $resultsTemp->result->results;
-} else if ($search_type != "specific") {
+} else {
 	//echo "search suggestions";
 	
 	
@@ -60,8 +72,6 @@ if ($search_type != "all" && $search_type != "specific"){
 	}
 
 	$searchResults = $resultsTemp->result;
-} else {
-	
 }
 
 

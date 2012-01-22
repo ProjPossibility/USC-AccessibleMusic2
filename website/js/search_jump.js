@@ -10,3 +10,12 @@ function search_play( key ) {
 	play_button.click();
 	stop_button.click();
 }
+
+
+function search_albums ( key ) {
+	getAlbumsForArtist
+	var phpURL = "search.php";
+	var ajax_load = "<img src='img/load.gif' alt='loading...' />";
+	$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + key + "&type=artistalbums");
+}
+
