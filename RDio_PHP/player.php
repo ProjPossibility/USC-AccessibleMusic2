@@ -27,14 +27,8 @@ foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
 	
 	//var_dump($value);
+	echo $value->key;
 ?>
-	<img src="<?php=$value->icon?>">
-	<?php=$value->key?>
-	<?php=$value->type?>
-	<?php=$value->artist?>
-	<?php=$value->name?>
-	<?php=$value->isExplicit?>
-	<?php=$value->length?>
 	
 	
 <?
