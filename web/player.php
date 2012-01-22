@@ -22,6 +22,10 @@ require_once('player_auth.php');
 <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>
 <script type="text/javascript">
 	function init(){
+		var phpURL = "search.php";
+		var ajax_load = "<img src='img/load.gif' alt='loading...' />";
+		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");
+		
 		shortcut.add("z",function(){
 			$('#previous').click();
 		},{
@@ -57,10 +61,13 @@ require_once('player_auth.php');
 			'propagate':true,
 			'target':document
 		});
+<<<<<<< HEAD
 		alert("test");
 		var phpURL = "search.php";
 		var ajax_load = "<img src='img/load.gif' alt='loading...d' />";
 		$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + "onload");
+=======
+>>>>>>> ef973f2d8c85b8f40337f586c75864aa2f7b60a2
 			
 	}
 	window.onload=init();
