@@ -52,7 +52,7 @@ $(document).ready(function() {
 	  alert("Clicked");
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-	  $('#searchsuggest').html(ajax_load).load(phpURL, "query = " . $('#query'));
+	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" . $('#query'));
 	  //$('#searchsuggest').load(phpURL);
   });
 });
