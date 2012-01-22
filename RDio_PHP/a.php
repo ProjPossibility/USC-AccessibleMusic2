@@ -48,7 +48,7 @@ $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   $_SESSION['oauth_token_secret'] = $rdio->token[1];
 
   //header('Location: '.$authorize_url);
-  ?><a href="<?=$authorize_url?>">asdfasdfasdf to c</a><?php
+  ?><a href="<?=$authorize_url?>">asdfasdfasdf to b</a><?php
 
 
 ?>
