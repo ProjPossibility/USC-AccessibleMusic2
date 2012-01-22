@@ -27,6 +27,9 @@
 
 	function onResult(result) {
 		document.getElementById('answer').innerHTML = result.text;
+		if(result.text == "play song){
+			alert("play song said");
+		}
 		speechapi.speak(result.text,"male");
 	}
 
@@ -35,7 +38,7 @@
 	}
 	function ResetGrammar() {
 		speechapi.setupRecognition("SIMPLE", document.getElementById('words').value,false);
-	}	
+	}	 
 </script>
 
 </head>
