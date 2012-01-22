@@ -44,7 +44,7 @@ $(document).ready(function() {
   // set up the controls
     // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#play').click(function() {
-	if(myPlayState =="2"){
+	if(myPlayState == "2"){
 		//player has been stopped, play from beginning
 		apiswf.rdio_play($('#play_key').val());
 	}
@@ -58,7 +58,15 @@ $(document).ready(function() {
 	}
   });
   $('#stop').click(function() { apiswf.rdio_stop(); });
-  $('#pause').click(function() { apiswf.rdio_pause(); });
+  $('#pause').click(function() { 
+	if(myPlayState == "0"){
+		//player is currently paused, start playing again
+		apiswf.rdio_play();
+	}
+	else{
+		apiswf.rdio_pause(); 
+	}
+  });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
@@ -115,9 +123,6 @@ callback_object.playStateChanged = function playStateChanged(playState) {
   // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#playState').text(playState);
   myPlayState = playState;
-  if(IsNumeric(myPlayState)){
-	alert("playstate is numeric");
-	}
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
