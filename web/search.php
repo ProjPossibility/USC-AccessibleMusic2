@@ -64,9 +64,11 @@ if ($search_type == 'artistalbums') {
 } elseif($search_type == "trackKeys"){
 	
 	$resultsTemp = $rdio->call("get", array("keys"=>"t4906983, t4907053, t4164073, t2813247, t3483547"));
-	
+	if ($resultsTemp->status != "ok") {
+		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
+	}
 	var_dump($resultsTemp);
-	$searchResults = $resultsTemp;
+	$searchResults = $resultsTemp->result;
 
 }elseif ($search_type != 'all' ) {
 	//echo "normal search";
