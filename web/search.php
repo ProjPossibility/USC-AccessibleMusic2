@@ -75,12 +75,12 @@ if ($search_type == 'artistalbums') {
 	//echo "search suggestions";
 	
 	
-	$resultsTemp = $rdio->call("searchSuggestions", array("query" => $query));
+	$resultsTemp = $rdio->call("search", array("query" => $query, "types"=>("artist", "album", "song", "playlist")));
 	if ($resultsTemp->status != "ok") {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
 
-	$searchResults = $resultsTemp->result;
+	$searchResults = $resultsTemp->result->results;
 }
 
 
@@ -95,7 +95,7 @@ echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>
 echo "<ol>";
 
 foreach($searchResults as $value) {
-	var_dump($value);
+	//var_dump($value);
 	$type = $value->type;
 	$icon = $value->icon;
 	
