@@ -14,8 +14,10 @@ echo $search_type;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 if ($search_type !== 0){
+	echo "search suggestions";
 	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 } else {
+	echo "normal search";
 	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>array($search_type)));
 }
 
