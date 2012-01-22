@@ -5,6 +5,7 @@
 <title>Search</title>
 
 <link href="css/search.css" rel="stylesheet" type="text/css" />
+<!-- <script type="text/javascript" src="js/search_jump.js"></script> -->
 </head>
 
 <body>
@@ -65,7 +66,7 @@ $i = 1; //result #
 
 
 
-echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
+echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
 
 foreach($searchResults as $value) {
 	$name = $value->name;
@@ -93,7 +94,7 @@ foreach($searchResults as $value) {
 	// expand the text out from the characters for printing
 	switch($type) {
 		case 'r':	$type = 'Artist';	break;
-		case 't':	$type = 'Track';	break;
+		case 't':	$type = 'Song';	break;
 		case 'a':	$type = 'Album';	break;
 		case 'p':	$type = 'Playlist';	break;
 	}
