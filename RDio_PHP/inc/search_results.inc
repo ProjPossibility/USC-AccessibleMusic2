@@ -6,7 +6,7 @@
 		<div id="songName"><a href="do_ajax_search_or_play(<?=$key?>)"><?=$name?></a></div>
 		<div id="artistName"><a href="do_ajax_search_or_play(<?=$artistKey?>)"><?=$artist?></a></div>
 	</div>
-	<div id="explicit"><?=($isExplicit == 1 ? "Explicit" : "")?></div>
+	<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
 	<div id="length"><?=$length?></div>
 	<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
 </div>
