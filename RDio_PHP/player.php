@@ -8,18 +8,28 @@ define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
 define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
+$search_type = $_GET["type"];
+echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
+var_dump($search_type != "All");
+if ($search_type != "All"){
+	echo "normal search";
+	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
+} else {
+	echo "search suggestions";
+	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
+}
 
 
 if ($searchResults->status != "ok") {
 	die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 }
 
-//var_dump($searchResults);
-
 echo '<pre>';
+var_dump($searchResults);
+
+
 $numresults = count($searchResults->result);
 echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
 
