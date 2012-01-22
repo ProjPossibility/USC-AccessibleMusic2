@@ -27,6 +27,8 @@ THE SOFTWARE.
   <script src="token.js"></script>
   <script src="hello.js"></script>
   <script src="lib/shortcut.js"></script>
+  <script type="text/javascript" src="http://www.speechapi.com/static/lib/speechapi-1.3.js"></script>
+  <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>
   <style type="text/css">
     #freq div {
       height: 10px;
@@ -76,6 +78,50 @@ THE SOFTWARE.
 	}
 	window.onload=init;
 	</script>
+  <script language="JavaScript" type="text/javascript" >
+
+		var words = ["play song", "pause song", "next song", "previous song"];
+
+        function onLoaded() {
+  		speechapi.setupRecognition("SIMPLE", document.getElementById('words').value,false,false);
+	}
+
+        var flashvars = {speechServer : "http://www.speechapi.com:8000/speechcloud"};
+	//var flashvars = {speechServer : "rtmp://www.speechapi.com:1935/firstapp"};
+        var params = {allowscriptaccess : "always"};
+	var attributes = {};
+	attributes.id = "flashContent";
+	swfobject.embedSWF("http://www.speechapi.com/static/lib/speechapi-1.6.swf", "myAlternativeContent", "215", "138", "9.0.28", false,flashvars, params, attributes);
+	speechapi.setup("eli","password",onResult, 
+			onFinishTTS, onLoaded, "flashContent");
+
+
+	function onResult(result) {
+		document.getElementById('answer').innerHTML = result.text;
+		speechapi.speak(result.text,"male");
+		if(result.text == "play song"){
+			document.getElementById('play').click();
+			alert("play song");
+		}
+		else if(result.text == "pause song"){
+			document.getElementById('pause').click();
+			alert("pause song");
+		}
+		else if(result.text == "next song"){
+			document.getElementById('next').click();
+			alert("next song");
+		}
+		else if(result.text == "previous song"){
+			document.getElementById('previous').click();
+			alert("previous song");
+		}
+	}
+
+	function onFinishTTS() {
+		//alert("finishTTS");
+	}
+</script>
+
 </head>
 <body>
 <h1>Rdio Playback API simple example</h1>
@@ -135,5 +181,21 @@ Keyboard shortcuts - z: previous | x: play | c: pause | v: stop | b: next<br>
   <div id="free">You are an Rdio Free user with <span id="remaining"></span>% of your quota remaining, subscribe now!</div>
   <div id="nobody">To hear full tracks subscribe to Rdio.</div>
 </div>
+<br>
+<table border="1" width=>
+<tr>
+  <td>Words</td>
+  <td><input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" /></td>
+</tr>
+<tr>
+  <td>Speech to text: </td>
+  <td><b id='answer'></b></td>
+</table>
+<br>
+
+
+<div id="myAlternativeContent"></div>
+<div id="flashContent"></div>
+
 </body>
 </html>
