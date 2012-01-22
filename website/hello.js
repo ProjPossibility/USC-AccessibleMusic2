@@ -33,7 +33,6 @@ $(document).ready(function() {
   var params = {
     'allowScriptAccess': 'always'
   };
-  alert("loaded");
   var attributes = {};
   swfobject.embedSWF('http://www.rdio.com/api/swf/', // the location of the Rdio Playback API SWF
       'apiswf', // the ID of the element that will be replaced with the SWF
@@ -42,7 +41,7 @@ $(document).ready(function() {
 
   // set up the controls
   $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
+    apiswf.rdio_play("a997982");
   });
   $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
