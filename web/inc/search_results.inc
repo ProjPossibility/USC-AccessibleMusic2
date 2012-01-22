@@ -3,10 +3,14 @@
 	<div id="searchalbum"><img src="<?=$icon?>" width="150" height="150" alt="Album cover" /></div>
 	<div id="type"><?=$type?></div>
 	<div id="info">
-		<?php if ($key != '') { ?>
+		<?php if ($key == 't') { ?>
 		<div id="songName"><a href="javascript:search_play('<?=$key?>')"><?=$name?></a></div>
 		<div id="empty_div1">&nbsp;</div>
-		<?php } ?>
+		<?php } else if ($key != '') { ?>
+		<div id="play"><a href="javascript:search_play('<?php =$key?>')">Play</a></div>
+		<div id="albumsearch"><a href="javascript:search_songs('<?php =$key?>')"><?php=$name?></a></div>"
+		<?php }?>
+		
 		<div id="artistName"><a href="javascript:search_albums('<?=$artistkey?>')"><?=$artist?></a></div>
 	</div>
 	<div id="length_explicit">
