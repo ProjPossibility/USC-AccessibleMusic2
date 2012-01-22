@@ -154,7 +154,7 @@ function MM_swapImage() { //v3.0
 <div id="header">
 <div id="left">
 <div>
-<div style="font-size:smaller;"><a href="#search" onclick="document.getElementById('query').focus();">&nbsp;Jump to Search</a></div>
+<div style="font-size:smaller;">&nbsp;<a href="#search" onclick="document.getElementById('query').focus();">Jump to Search</a></div>
 <div id="userID" style="font-size:smaller;"><?php
 
 if ($currentUser) {
