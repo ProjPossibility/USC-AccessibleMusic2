@@ -64,6 +64,7 @@ $(document).ready(function() {
 		apiswf.rdio_play();
 	}
 	else{
+		//play is not currently puased, pause it
 		apiswf.rdio_pause(); 
 	}
   });
