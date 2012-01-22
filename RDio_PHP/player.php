@@ -9,7 +9,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
 $search_type = $_GET["type"];
-//echo $search_type;
+echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
