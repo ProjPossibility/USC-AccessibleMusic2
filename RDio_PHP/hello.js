@@ -115,7 +115,7 @@ callback_object.playStateChanged = function playStateChanged(playState) {
 	alert("playstate is numeric");
 	}
   if(IsNan(myPlayState)){
-	alert("playstate is numeric");
+	alert("playstate is not numeric");
 	}
 }
 
