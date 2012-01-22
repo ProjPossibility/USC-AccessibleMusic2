@@ -18,7 +18,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
 # work out what our current URL is
 $next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
-  "://" . $_SERVER['SERVER_NAME'].'../website/oauth/a.php'; //$_SERVER['SCRIPT_NAME'];
+  "://" . $_SERVER['SERVER_NAME'].$_SERVER['DOCUMENT_ROOT'];
 
 
 
@@ -31,7 +31,7 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
-  if ($_GET['oauth_verifier']) {
+  if (isset($_GET['oauth_verifier'])) {
 	  echo 'C: SECRET???!!!';
 	  die('should not have a secret passed to me here, please debug');
 	}
@@ -45,6 +45,8 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
+  
+  /*
   if ($currentUser) {
     ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
       <ul><? 
@@ -64,10 +66,11 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     # and start again
     header('Location: '.$current_url);
   }
-   
+   */
 } else {
-	echo 'C: NO TOKENS?';
+	//echo 'C: NO TOKENS?';
+	// not authenticated
 }
 
-*/
+
 ?>
