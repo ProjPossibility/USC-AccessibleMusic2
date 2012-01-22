@@ -154,7 +154,7 @@ function MM_swapImage() { //v3.0
 <div id="header">
 <div id="left">
 <div>
-<div style="font-size:smaller;"><a href="#search" onclick="document.getElementById('query').focus();">Jump to Search</a></div>
+<div style="font-size:smaller;"><a href="#search" onclick="document.getElementById('query').focus();">&nbsp;Jump to Search</a></div>
 <div id="userID" style="font-size:smaller;"><?php
 
 if ($currentUser) {
@@ -222,7 +222,6 @@ if ($currentUser) {
 =======
 -->
     <div><div style="float:left;">
-    <a href="#search" onclick="document.getElementById('query').focus();">SEARCHASDFGH</a>
 	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
 		<option value = "all">All</option>
