@@ -23,6 +23,8 @@ $query = $_GET["query"];
 $search_type = $_GET["type"];
 //echo $search_type;
 //echo $query;
+
+alert("test");
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 
