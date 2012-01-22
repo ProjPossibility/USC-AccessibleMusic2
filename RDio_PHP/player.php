@@ -29,7 +29,7 @@ foreach($searchResults->result as $value){
 	//var_dump($value);
 	//echo $value->key;
 ?>
-	<img src="<?php=$value->icon?>">
+	<img src="<?php echo $value->icon;?>">
 	
 <?
 }
