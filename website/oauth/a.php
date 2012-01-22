@@ -50,28 +50,5 @@ $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   //header('Location: '.$authorize_url);
   ?><a href="<?=$authorize_url?>">asdfasdfasdf to b</a><?php
 
-  
-  if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
-  
-  	# we have a token in our session, let's use it
-  	$rdio->token = array($_SESSION['oauth_token'],
-  	$_SESSION['oauth_token_secret']);
-    if ($_GET['oauth_verifier']) {
-  	# we've been passed a verifier, that means that we're in the middle of
-  	# authentication.
-  	$rdio->complete_authentication($_GET['oauth_verifier']);
-      # save the new token in our session
-  	$_SESSION['oauth_token'] = $rdio->token[0];
-  	$_SESSION['oauth_token_secret'] = $rdio->token[1];
-      
-  	echo 'token0: '.$rdio->token[0];
-      echo '<br>token1: '.$rdio->token[1];
-    } else {
-  	echo 'B: NO SECRET?';
-  }   
-  ?><a href="c.php">asdfasdfasdf to c</a><?php
-   //header('Location: '.$current_url);
-} else {
-	echo 'B: NO TOKENS?';
-}
+	
 ?>
