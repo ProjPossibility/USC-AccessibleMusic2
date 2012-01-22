@@ -62,8 +62,7 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
-	  var search_key= document.getElementById("search_key");
-	  var search_type = search_key.options[search_key.selectedIndex];
+	  var search_type= document.getElementById("search_type").options[search_key.selectedIndex];
 	  alert($search_type);
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
