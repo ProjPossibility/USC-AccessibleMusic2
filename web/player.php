@@ -139,16 +139,16 @@ function MM_swapImage() { //v3.0
 		//alert("finishTTS");
 	}
 	function speakNowPlaying(){
-		speak("now playing "+$('#track').text(),female);
+		speechapi.speak("now playing "+$('#track').text(), "female");
 	}
 	function speakTrack(){
-		speak($('#track').text(),male);
+		speechapi.speak($('#track').text(),"male");
 	}
 	function speakArtist(){
-		speak($('#artist').text(),male);
+		speechapi.speak($('#artist').text(),"male");
 	}
 	function speakAlbum(){
-		speak($('#album').text(),male);
+		speechapi.speak($('#album').text(),"male");
 	}
 	
 	
@@ -207,28 +207,7 @@ if ($currentUser) {
 <div id="container">
 <div id="body">
 	<input id="play_key" style="visibility:hidden;" value="a455755" />
-<!--<<<<<<< HEAD
-    <div>
-	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
-		<input type="text" id="query" alt="Search box" style="left;"/>
-		<select id = "search_type" style="left;">
-			<option value = "all">All</option>
-			<option value="artist">Artist</option>
-			<option value = "album">Album</option>
-			<option value = "track">Songs</option>
-			<option value = "playlist">Playlist</option>
-		</select>
-		<img src="img/search.png" alt="search" id="searchbutton" style="left;" class="playerSearch" />
-	
-	</form>
 
-   <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" />
-    <div><div id="myAlternativeContent" style="right;"></div>
-	<div id="flashContent" style="right;"></div></div></div>
-<br>
-	<div id = "searchsuggest"></div>
-=======
--->
     <div><div style="float:left;">
 	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
