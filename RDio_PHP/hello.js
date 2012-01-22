@@ -25,6 +25,7 @@ var apiswf = null;
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
+	
   var flashvars = {
     'playbackToken': playback_token, // from token.js
     'domain': domain,                // from token.js
@@ -47,14 +48,11 @@ $(document).ready(function() {
   $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
-//  $('#searchsuggest').click(function(){ 
-//	  $.ajaxSetup({
-//		  cache: false;
-//	  })
-//	  
+  $('#searchsuggest').click(function(){ 
+	  alert("Clicked");
 //	  var phpURL = "player.php";
-//	  $('#search').load(phpURL);
-//  })
+	  //$('#search').load(phpURL);
+  })
 });
 
 
