@@ -64,10 +64,13 @@ $(document).ready(function() {
   $('#searchbutton').click(function(){ 
 	  var search_id= document.getElementById("search_type");
 	  var search_type = search_id.options[search_id.selectedIndex];
-	  alert(search_type);
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
+	  if (search_type.value != "All"){
+		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() & "type=" + search_type.value);
+	  } else {
+		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
+	  }
 	  //$('#searchsuggest').load(phpURL);
   });
 });
