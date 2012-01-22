@@ -113,7 +113,7 @@ foreach($searchResults as $value) {
 	$name = '';
 	$key = '';
 	$track_temp = @$value->trackKeys;
-	$trackKeys = implode(",", track_temp);
+	$trackKeys = implode(",", $track_temp);
 	var_dump($trackKeys);
 	if($type != "r"){
 		if ($type != "p"){
