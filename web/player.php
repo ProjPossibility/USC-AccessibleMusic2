@@ -107,22 +107,22 @@ function MM_swapImage() { //v3.0
 	speechapi.setup("eli","password",onResult, 
 			onFinishTTS, onLoaded, "flashContent");
 
-	function speak() {
-		speechapi.speak(document.getElementById('words').value,"male");
+	function speak(text) {
+		speechapi.speak(text,"male");
 	}
 
 	function onResult(result) {
 		//document.getElementById('answer').innerHTML = result.text;
-		speechapi.speak(result.text,"male");
+		//speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
 			$('#play').click();
 			alert("play song");
-			speak($('#track').text(),"male");
+			speak("playing song "+$('#track').text(),"male");
 		}
 		else if(result.text == "pause song"){
 			$('#play').click();
 			alert("pause song");
-			speak($('#track').text(),"male");
+			speak("paused song "+$('#track').text(),"male");
 		}
 		else if(result.text == "next song"){
 			$('#next').click();
@@ -150,7 +150,27 @@ function MM_swapImage() { //v3.0
 <div id="header-container">
 <div id="header">
 <div id="left">
-<div id="userID">sign in</div>
+<div id="userID"><?php
+
+if ($currentUser) {
+	echo 'Hello, ' . $currentUser->result->firstName;
+	
+	/*
+    $myPlaylists = $rdio->call('getPlaylists')->result->owned;
+    
+    # list them
+    foreach ($myPlaylists as $playlist) {
+      ? ><li><a href="< ?= $playlist->shortUrl?>">< ?=$playlist->name? ></a></li>< ?
+    }
+    ? ></ul>
+    */
+    echo '<a href="signout.php">Log out</a>';
+
+} else {
+	echo '<a href="signin.php">Sign In</a>';
+}
+
+?></div>
 <div id="albumcover"><img src="img/blank1x1.gif" id="art" width="150" height="150" /></div>
 </div>
 <div id="center">
