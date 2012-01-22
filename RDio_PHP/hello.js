@@ -22,6 +22,7 @@ THE SOFTWARE.
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
+var myPlayState = 2;
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
@@ -43,15 +44,15 @@ $(document).ready(function() {
   // set up the controls
     // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#play').click(function() {
-	if(playState ==2){
+	if(myPlayState =='2'){
 		//player has been stopped, play from beginning
 		apiswf.rdio_play($('#play_key').val());
 	}
-	else if(playState == 1){
+	else if(myPlayState == '1'){
 		//player is currentl yplaying, pause it
 		apiswf.rdio_pause();
 	}
-	else if(playState == 0){
+	else if(myPlayState == '0'){
 		//player has been paused, play starting at current position
 		apiswf.rdio_play();
 	}
@@ -61,7 +62,8 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
-	  $type = $('search_type').options[$('search_type').selectedIndex];
+	  $type = $('#search_type').options[0];
+	  alert($type);
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
 	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
@@ -108,6 +110,7 @@ callback_object.playStateChanged = function playStateChanged(playState) {
   // The playback state has changed.
   // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#playState').text(playState);
+  myPlayState = playState;
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
