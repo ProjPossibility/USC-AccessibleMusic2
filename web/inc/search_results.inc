@@ -8,7 +8,7 @@
 		<div id="empty_div1">&nbsp;</div>
 		<?php } else if ($key != '') { ?>
 		<div id="play"><a href="javascript:search_play('<?=$key?>')">Play</a></div>
-		<div id="albumsearch"><a href="javascript:search_songs('<?=$key?>')"><?php=$name?></a></div>"
+		<div id="albumsearch"><a href="javascript:search_songs('<?=$trackKeys?>','<?=$key?>')"><?=$name?></a></div>"
 		<?php }?>
 		
 		<div id="artistName"><a href="javascript:search_albums('<?=$artistkey?>')"><?=$artist?></a></div>
