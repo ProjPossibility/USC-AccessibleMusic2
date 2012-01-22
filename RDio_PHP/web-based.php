@@ -23,7 +23,6 @@ include_once('lib/debug.php');
 
 echo 'alskjfdlsakdjflsakdjf';
 
-die('yo');
 
 
 session_start();
