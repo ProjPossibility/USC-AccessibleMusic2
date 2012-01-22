@@ -15,7 +15,6 @@
 	function init(){
 		alert("init'ing");
 		shortcut.add("z",function(){
-			alert("z");
 			$('#previous').click();
 		},{
 			'type':'keydown',
@@ -23,7 +22,7 @@
 			'target':document
 		});
 		shortcut.add("x",function(){
-			document.getElementById('play').click();
+			$('#play').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
@@ -37,14 +36,14 @@
 			'target':document
 		});*/
 		shortcut.add("v",function(){
-			document.getElementById('stop').click();
+			$('#stop').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 		shortcut.add("b",function(){
-			document.getElementById('next').click();
+			$('#next').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
