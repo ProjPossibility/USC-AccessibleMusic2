@@ -38,28 +38,35 @@ THE SOFTWARE.
   </style>
   <script type="text/javascript">
 	function init(){
-		shortcut.add("Up",function(){
-			document.getElementById('pause').click();
-		},{
-			'type':'keydown',
-			'propagate':true,
-			'target':document
-		});
-		shortcut.add("Down",function(){
-			document.getElementById('play').click();
-		},{
-			'type':'keydown',
-			'propagate':true,
-			'target':document
-		});
-		shortcut.add("Left",function(){
+		shortcut.add("z",function(){
 			document.getElementById('previous').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
-		shortcut.add("Right",function(){
+		shortcut.add("x",function(){
+			document.getElementById('play').click();
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("c",function(){
+			document.getElementById('pause').click();
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("v",function(){
+			document.getElementById('stop').click();
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document
+		});
+		shortcut.add("b",function(){
 			document.getElementById('next').click();
 		},{
 			'type':'keydown',
