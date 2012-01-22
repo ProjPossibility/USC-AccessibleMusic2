@@ -139,7 +139,16 @@ function MM_swapImage() { //v3.0
 		//alert("finishTTS");
 	}
 	function speakNowPlaying(){
-		speak("now playing "+$('#track').text(),"male");
+		speechapi.speak("now playing "+$('#track').text(), "female");
+	}
+	function speakTrack(){
+		speechapi.speak($('#track').text(),"male");
+	}
+	function speakArtist(){
+		speechapi.speak($('#artist').text(),"male");
+	}
+	function speakAlbum(){
+		speechapi.speak($('#album').text(),"male");
 	}
 	
 	
@@ -186,9 +195,9 @@ if ($currentUser) {
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="forward" /></a></div>
 <div id="playing">
   <div id="currentstate"></div>
-<a onclick="speakNowPlaying()"><div id="track" style="width:425px; text-decoration:underline;"></div></a>
-<div id="artist" style="width:425px;"></div>
-<div id="album" style="width: 425px; font-style:italic;" ></div>
+<a onclick="speakTrack()"><div id="track" style="width:425px; text-decoration:underline;"></div></a>
+<a onclick="speakArtist()"><div id="artist" style="width:425px;"></div></a>
+<a onclick="speakAlbum()"><div id="album" style="width: 425px; font-style:italic;" ></div></a>
 </div>
 </div>
 <div id="right"><a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('aRdio Logo','','img/ardiologo2.png',1)"><img src="img/ardiologo.png" alt="aRdio Logo" name="aRdio Logo" width="280" height="180" border="0" id="aRdio Logo" /></a></div>
@@ -198,28 +207,7 @@ if ($currentUser) {
 <div id="container">
 <div id="body">
 	<input id="play_key" style="visibility:hidden;" value="a455755" />
-<!--<<<<<<< HEAD
-    <div>
-	<form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" >
-		<input type="text" id="query" alt="Search box" style="left;"/>
-		<select id = "search_type" style="left;">
-			<option value = "all">All</option>
-			<option value="artist">Artist</option>
-			<option value = "album">Album</option>
-			<option value = "track">Songs</option>
-			<option value = "playlist">Playlist</option>
-		</select>
-		<img src="img/search.png" alt="search" id="searchbutton" style="left;" class="playerSearch" />
-	
-	</form>
 
-   <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" />
-    <div><div id="myAlternativeContent" style="right;"></div>
-	<div id="flashContent" style="right;"></div></div></div>
-<br>
-	<div id = "searchsuggest"></div>
-=======
--->
     <div><div style="float:left;">
 	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
