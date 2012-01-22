@@ -51,8 +51,9 @@ $(document).ready(function() {
 	  $.ajaxSetup({
 		  cache: false;
 	  })
+	  
 	  var phpURL = "player.php";
-	  $('#search').html().load(phpURL);
+	  $('#search').load(phpURL);
   })
 });
 
