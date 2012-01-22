@@ -157,7 +157,7 @@ function MM_swapImage() { //v3.0
 <div id="userID" style="font-size:smaller;"><?php
 
 if ($currentUser) {
-	echo 'Hello, ' . $currentUser->result->firstName;
+	echo 'Hi, ' . $currentUser->result->firstName;
 	
 	/*
     $myPlaylists = $rdio->call('getPlaylists')->result->owned;
@@ -186,7 +186,7 @@ if ($currentUser) {
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="forward" /></a></div>
 <div id="playing">
   <div id="currentstate"></div>
-<div id="track" style="width:425px; text-decoration:underline;"></div>
+<a onclick="speakNowPlaying()"><div id="track" style="width:425px; text-decoration:underline;"></div></a>
 <div id="artist" style="width:425px;"></div>
 <div id="album" style="width: 425px; font-style:italic;" ></div>
 </div>
