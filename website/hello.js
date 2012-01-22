@@ -33,6 +33,7 @@ $(document).ready(function() {
   var params = {
     'allowScriptAccess': 'always'
   };
+  alert("loaded");
   var attributes = {};
   swfobject.embedSWF('http://www.rdio.com/api/swf/', // the location of the Rdio Playback API SWF
       'apiswf', // the ID of the element that will be replaced with the SWF
