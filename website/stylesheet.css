@@ -17,12 +17,13 @@ body {
 
 #header-container {
 	height: 200px;
-	background-color:#999;
+	background-color:#FFF;
 }
 
 #header {
 	width: 940px;
 	margin: 0 auto;
+	padding: 10px 0;
 	position: relative;
 }
 
@@ -49,7 +50,7 @@ body {
 
 #footer-container {
 	height: 40px;
-	background-color:#999;
+	background-color:#FFF;
 }
 
 #footer {
