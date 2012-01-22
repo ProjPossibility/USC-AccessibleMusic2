@@ -75,12 +75,7 @@ $(document).ready(function() {
 	  var search_type = search_id.options[search_id.selectedIndex];
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-	  if (search_type.value != "All"){
-		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
-	  } else {
-		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + 0);
-		  
-	  }
+	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
 	  //$('#searchsuggest').load(phpURL);
   });
 });
