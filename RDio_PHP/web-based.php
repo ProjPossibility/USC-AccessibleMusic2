@@ -1,5 +1,6 @@
 <?php
 include_once('lib/debug.php');
+include_once('lib/no_cache.php');
 
 # (c) 2011 Rdio Inc
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -49,7 +50,7 @@ if ($_GET['logout']) {
 
 
 if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
-  die( $current_url);
+  
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
@@ -61,6 +62,11 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     $_SESSION['oauth_token'] = $rdio->token[0];
     $_SESSION['oauth_token_secret'] = $rdio->token[1];
   }
+  
+  
+  die( $current_url);
+  
+  
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
   if ($currentUser) {
