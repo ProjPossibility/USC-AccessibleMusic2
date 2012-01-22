@@ -47,14 +47,14 @@ $(document).ready(function() {
   $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
-  $('#searchsuggest').click(function(){ 
-	  $.ajaxSetup({
-		  cache: false;
-	  })
-	  
-	  var phpURL = "player.php";
-	  $('#search').load(phpURL);
-  })
+//  $('#searchsuggest').click(function(){ 
+//	  $.ajaxSetup({
+//		  cache: false;
+//	  })
+//	  
+//	  var phpURL = "player.php";
+//	  $('#search').load(phpURL);
+//  })
 });
 
 
