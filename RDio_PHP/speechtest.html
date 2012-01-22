@@ -13,7 +13,7 @@
 		var words = ["play song", "pause song", "next song", "previous song"];
 
         function onLoaded() {
-  		speechapi.setupRecognition("SIMPLE", document.getElementById('words').value,false,false);
+  		speechapi.setupRecognition("SIMPLE", words,false,false);
 	}
 
         var flashvars = {speechServer : "http://www.speechapi.com:8000/speechcloud"};
