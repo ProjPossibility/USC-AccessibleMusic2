@@ -150,7 +150,27 @@ function MM_swapImage() { //v3.0
 <div id="header-container">
 <div id="header">
 <div id="left">
-<div id="userID">sign in</div>
+<div id="userID"><?php
+
+if ($currentUser) {
+	echo 'Hello, ' . $currentUser->result->firstName;
+	
+	/*
+    $myPlaylists = $rdio->call('getPlaylists')->result->owned;
+    
+    # list them
+    foreach ($myPlaylists as $playlist) {
+      ? ><li><a href="< ?= $playlist->shortUrl?>">< ?=$playlist->name? ></a></li>< ?
+    }
+    ? ></ul>
+    */
+    echo '<a href="signout.php">Log out</a>';
+
+} else {
+	echo '<a href="signin.php">Sign In</a>';
+}
+
+?></div>
 <div id="albumcover"><img src="img/blank1x1.gif" id="art" width="150" height="150" /></div>
 </div>
 <div id="center">
