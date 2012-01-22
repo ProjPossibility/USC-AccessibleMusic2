@@ -12,18 +12,17 @@
 <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>
 <script type="text/javascript">
 	alert("runs before function.init");
-	window.onload=function(){
+	function init(){
 		alert("init'ing");
 		shortcut.add("z",function(){
-			alert("z");
-			document.getElementById('previous').click();
+			$('#previous').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 		shortcut.add("x",function(){
-			document.getElementById('play').click();
+			$('#play').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
@@ -37,20 +36,21 @@
 			'target':document
 		});*/
 		shortcut.add("v",function(){
-			document.getElementById('stop').click();
+			$('#stop').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 		shortcut.add("b",function(){
-			document.getElementById('next').click();
+			$('#next').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
 	}
+	window.onload=init();
 	
 	</script>
 <title>Rdio Accessible</title>
@@ -156,7 +156,7 @@ function MM_swapImage() { //v3.0
 </div>
 <div id="container">
 <div id="body">
-	<input id="play_key" style="visibility:hidden;" value="t1155111" /><br />
+	<input id="play_key" style="visibility:hidden;" value="a455755" /><br />
     <input id="query" /><select id = "search_type">
 		<option value = "all">All</option>
 		<option value="artist">Artist</option>
