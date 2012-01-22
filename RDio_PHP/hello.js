@@ -41,8 +41,20 @@ $(document).ready(function() {
 
 
   // set up the controls
+    // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
   $('#play').click(function() {
-    apiswf.rdio_play($('#play_key').val());
+	if(playState ==2){
+		//player has been stopped, play from beginning
+		apiswf.rdio_play($('#play_key').val());
+	}
+	else if(playState == 1){
+		//player is currentl yplaying, pause it
+		apiswf.rdio_pause();
+	}
+	else if(playState == 0){
+		//player has been paused, play starting at current position
+		apiswf.rdio_play();
+	}
   });
   $('#stop').click(function() { apiswf.rdio_stop(); });
   $('#pause').click(function() { apiswf.rdio_pause(); });
