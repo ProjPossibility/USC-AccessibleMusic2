@@ -52,6 +52,9 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     # save the new token in our session
     $_SESSION['oauth_token'] = $rdio->token[0];
     $_SESSION['oauth_token_secret'] = $rdio->token[1];
+    
+    echo 'token0: '.$rdio->token[0];
+    echo '<br>token1: '.$rdio->token[1];
   } else {
 	  echo 'B: NO SECRET?';
 	}
