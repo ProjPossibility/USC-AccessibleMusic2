@@ -22,12 +22,13 @@ if ($searchResults->status != "ok") {
 echo '<pre>';
 $numresults = count($searchResults->result);
 echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
+
 foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
 	
-	//<img src="<php=$searchResults?>">
+	//<img src="<php=$searchResults? >">
 ?>
-	<?php var_dump($value); ?>
+	var_dump($value); ?>
 	
 	
 	
