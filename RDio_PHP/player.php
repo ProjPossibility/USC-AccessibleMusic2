@@ -27,7 +27,7 @@ if ($search_type != "All"){
 		$process[i]["icon"] = $value->icon;
 		if(type != "r"){
 			if (type != "p"){
-				$process[i]["explicit"] = $value->explicit;
+				$process[i]["explicit"] = $value->isExplicit;
 			} else {
 				$process[i]["artist"] = $value->owner;
 				$process[i]["artistKey"] = $value->ownerKey;
@@ -56,72 +56,9 @@ if ($searchResults->status != "ok") {
 // var_dump($searchResults);
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Search</title>
-
-<link href="search.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-xx Results returned for "abcdefghijklnoqprstuvwxyz"
-
-<div id="results">
-<div id="resultnum">Num.</div>
-<div id="album"><img src="alcover.jpg" width="150" height="150" alt="Album cover" /></div>
-<div id="type">Type</div>
-<div id="songName">Song Name</div>
-<div id="artistName">Artist Name</div>
-<div id="explicit">Explicit</div>
-<div id="length">Length</div>
-<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
-</div>
-<div id="results">
-<div id="resultnum">Num.</div>
-<div id="album"><img src="alcover.jpg" width="150" height="150" alt="Album cover" /></div>
-<div id="type">Type</div>
-<div id="songName">Song Name</div>
-<div id="artistName">Artist Name</div>
-<div id="explicit">Explicit</div>
-<div id="length">Length</div>
-<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
-</div>
-<div id="results">
-<div id="resultnum">Num.</div>
-<div id="album"><img src="alcover.jpg" width="150" height="150" alt="Album cover" /></div>
-<div id="type">Type</div>
-<div id="songName">Song Name</div>
-<div id="artistName">Artist Name</div>
-<div id="explicit">Explicit</div>
-<div id="length">Length</div>
-<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
-</div>
-<div id="results">
-<div id="resultnum">Num.</div>
-<div id="album"><img src="alcover.jpg" width="150" height="150" alt="Album cover" /></div>
-<div id="type">Type</div>
-<div id="songName">Song Name</div>
-<div id="artistName">Artist Name</div>
-<div id="explicit">Explicit</div>
-<div id="length">Length</div>
-<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
-</div>
-<div id="results">
-<div id="resultnum">Num.</div>
-<div id="album"><img src="alcover.jpg" width="150" height="150" alt="Album cover" /></div>
-<div id="type">Type</div>
-<div id="songName">Song Name</div>
-<div id="artistName">Artist Name</div>
-<div id="explicit">Explicit</div>
-<div id="length">Length</div>
-<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
-</div>
-</body>
-</html>
 
 
+<?
 //echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
 
 //foreach($searchResults->result as $value){
