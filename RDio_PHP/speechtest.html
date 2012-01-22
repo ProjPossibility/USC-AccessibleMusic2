@@ -13,7 +13,7 @@
 		var words = ["play song", "pause song", "next song", "previous song"];
 
         function onLoaded() {
-  		speechapi.setupRecognition("SIMPLE", words,false,false);
+  		speechapi.setupRecognition("SIMPLE", document.getElementById('words').value,false,false);
 	}
 
         var flashvars = {speechServer : "http://www.speechapi.com:8000/speechcloud"};
@@ -59,7 +59,7 @@
 <table border="1" width=>
 <tr>
   <td>Words</td>
-  <td><input type="text" id="words" value="play song, pause song, next song, previous song" size="100" style:"z-index: -1;"/></td>
+  <td><input type="text" id="words" value="play song, pause song, next song, previous song" size="100" style:"left:-999";"/></td>
 </tr>
 <tr>
   <td>RESULT</td>
