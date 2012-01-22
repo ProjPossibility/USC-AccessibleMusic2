@@ -4,6 +4,8 @@ session_start();
 require_once 'lib/no_cache.php';
 require_once 'lib/rdio.php';
 require_once 'lib/debug.php';
+$currentUser = 0;
+require_once('player_auth.php');
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -77,6 +79,11 @@ if ($search_type == 'artistalbums') {
 	}
 
 	$searchResults = $resultsTemp->result->results;
+} elseif ($search_type == "onload") {
+	
+	$resultsTemp = $rdio->call("getHeavyRotation", array("user" => $currentUser));
+	var_dump(resultsTemp);
+	
 } else {
 	//echo "search suggestions";
 	
