@@ -42,4 +42,45 @@ $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
 
 
 
+
+if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
+  
+  # we have a token in our session, let's use it
+  $rdio->token = array($_SESSION['oauth_token'],
+    $_SESSION['oauth_token_secret']);
+  if ($_GET['oauth_verifier']) {
+	  echo 'C: SECRET???!!!';
+	  die('kill me now');
+	}
+
+/*
+  
+  echo 'destroy!';
+  session_destroy();
+  die( $current_url);
+  */
+  
+  # make sure that we can in fact make an authenticated call
+  $currentUser = $rdio->call('currentUser');
+  if ($currentUser) {
+    ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
+      <ul><? 
+      //'
+    $myPlaylists = $rdio->call('getPlaylists')->result->owned;
+    
+    # list them
+    foreach ($myPlaylists as $playlist) {
+      ?><li><a href="<?= $playlist->shortUrl?>"><?=$playlist->name?></a></li><?
+    }
+    ?></ul><a href="?logout=1">Log out.</a><?
+  } else {
+    # auth failure, clear session
+    session_destroy();
+    # and start again
+    header('Location: '.$current_url);
+  }
+   
+} else {
+	echo 'C: NO TOKENS?';
+}
 ?>
