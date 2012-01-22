@@ -112,6 +112,7 @@ foreach($searchResults as $value) {
 	$name = '';
 	$key = '';
 	$trackKeys = @$value->trackKeys;
+	var_dump($trackKeys);
 	if($type != "r"){
 		if ($type != "p"){
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist
