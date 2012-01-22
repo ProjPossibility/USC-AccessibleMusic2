@@ -12,7 +12,7 @@
 <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>-->
 <script type="text/javascript">
 	alert("runs before function.init");
-	window.onload=function(){
+	function init(){
 		alert("init'ing");
 		shortcut.add("z",function(){
 			alert("z");
@@ -51,7 +51,7 @@
 			'target':document
 		});
 	}
-	window.onload(alert("lololol"));
+	window.onload(init());
 	
 	</script>
 <title>Rdio Accessible</title>
