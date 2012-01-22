@@ -38,12 +38,16 @@
 	width: 340px;
 }
 
-#explicit {
-	width: 75px;
+#length_explicit {
+	widows:150px;
 	float:left;
 }
 
+#explicit {
+	width: 150px;
+	color:#F00;
+}
+
 #length {
-	width: 75px;
-	float:left;
+	width: 150px;
 }
