@@ -103,19 +103,19 @@ function MM_swapImage() { //v3.0
 		document.getElementById('answer').innerHTML = result.text;
 		speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
-			document.getElementById('play').click();
+			$('#play').click();
 			alert("play song");
 		}
 		else if(result.text == "pause song"){
-			document.getElementById('pause').click();
+			$('#pause').click();
 			alert("pause song");
 		}
 		else if(result.text == "next song"){
-			document.getElementById('next').click();
+			$('#next').click();
 			alert("next song");
 		}
 		else if(result.text == "previous song"){
-			document.getElementById('previous').click();
+			$('#previous').click();
 			alert("previous song");
 		}
 	}
