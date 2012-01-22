@@ -20,7 +20,7 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 $resultsTemp = '';
 
-if ($search_type != "All"){
+if ($search_type != "all"){
 	echo "normal search";
 	
 	
