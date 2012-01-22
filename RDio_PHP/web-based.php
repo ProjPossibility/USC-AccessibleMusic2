@@ -1,5 +1,6 @@
 <?php
 include_once('lib/debug.php');
+include_once('lib/no_cache.php');
 
 # (c) 2011 Rdio Inc
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -36,7 +37,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
 
-die( $current_url);
+
 
 if ($_GET['logout']) {
   # to log out, just throw away the session data
@@ -45,7 +46,11 @@ if ($_GET['logout']) {
   header('Location: '.$current_url);
 }
 
+
+
+
 if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
+  
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
@@ -57,6 +62,11 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     $_SESSION['oauth_token'] = $rdio->token[0];
     $_SESSION['oauth_token_secret'] = $rdio->token[1];
   }
+  
+  
+  die( $current_url);
+  
+  
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
   if ($currentUser) {
