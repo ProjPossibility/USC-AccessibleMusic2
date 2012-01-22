@@ -63,6 +63,7 @@ if ($search_type == 'artistalbums') {
 	}
 	
 } elseif($search_type == 'trackKeys'){
+	var_dump($query);
 	$resultsTemp = $rdio->call("get", array("query"=>$query));
 	
 	$searchResults = $resultsTemp;
@@ -111,6 +112,7 @@ foreach($searchResults as $value) {
 	$name = '';
 	$key = '';
 	$trackKeys = @$value->trackKeys;
+	var_dump($trackKeys);
 	if($type != "r"){
 		if ($type != "p"){
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist

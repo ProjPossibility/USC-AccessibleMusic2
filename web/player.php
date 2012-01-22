@@ -164,7 +164,7 @@ if ($currentUser) {
     }
     ? ></ul>
     */
-    echo '<a href="signout.php">Log out</a>';
+    echo ' <a href="signout.php">Log out</a>';
 
 } else {
 	echo '<a href="signin.php">Sign In</a>';
