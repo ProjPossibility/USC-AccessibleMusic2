@@ -20,7 +20,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
 $search_type = $_GET["type"];
-echo $search_type;
+//echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
@@ -32,7 +32,7 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $resultsTemp = '';
 
 if ($search_type != "all"){
-	echo "normal search";
+	//echo "normal search";
 	
 	
 	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
@@ -46,7 +46,7 @@ if ($search_type != "all"){
 
 	$searchResults = $resultsTemp->result->results;
 } else {
-	echo "search suggestions";
+	//echo "search suggestions";
 	
 	
 	$resultsTemp = $rdio->call("searchSuggestions", array("query" => $query));
