@@ -70,7 +70,8 @@ $(document).ready(function() {
 	  if (search_type.value != "All"){
 		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
 	  } else {
-		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
+		  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + 0);
+		  
 	  }
 	  //$('#searchsuggest').load(phpURL);
   });
