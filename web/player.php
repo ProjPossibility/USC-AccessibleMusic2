@@ -158,7 +158,7 @@ function MM_swapImage() { //v3.0
 <div id="userID" style="font-size:smaller;"><?php
 
 if ($currentUser) {
-	echo 'Hello, ' . $currentUser->result->firstName;
+	echo 'Hi, ' . $currentUser->result->firstName;
 	
 	/*
     $myPlaylists = $rdio->call('getPlaylists')->result->owned;
