@@ -29,8 +29,13 @@ foreach($searchResults->result as $value){
 	//var_dump($value);
 	//echo $value->key;
 ?>
-	<img src="<?php =$value->icon;?>">
-	
+	<img src="<?php echo $value->icon;?>">
+	<?php echo $value->key; ?>
+	<?php echo $value->type; ?>
+	<?php echo $value->artist; ?>
+	<?php echo $value->name; ?>
+	<?php echo $value->isExplicit; ?>
+	<?php echo $value->length; ?>
 <?
 }
 
