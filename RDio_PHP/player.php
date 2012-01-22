@@ -42,6 +42,11 @@ if ($search_type != "All"){
 	echo "search suggestions";
 	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 	$numresults = count($searchResults->result);
+	$i = 0;
+	$process = array();
+	foreach($searchResults->result as $value){
+		
+	}
 }
 echo "<pre>";
 foreach($process as $array){
