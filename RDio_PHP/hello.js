@@ -49,7 +49,7 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){ 
-	  alert("Clicked");
+	  $type = $('search_type').options[$('search_type').selectedIndex];
 	  var phpURL = "player.php";
 	  var ajax_load = "<img src='img/load.gif' alt='loading...' />";
 	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val());
