@@ -4,7 +4,7 @@
 	<div id="type"><?=$type?></div>
 	<div id="info">
 		<div id="songName"><a href="javascript:search_play('<?=$key?>')"><?=$name?></a></div>
-		<div></div>
+		<div>&nbsp;</div>
 		<div id="artistName"><a href="javascript:search_albums('<?=$artistkey?>')"><?=$artist?></a></div>
 	</div>
 	<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
