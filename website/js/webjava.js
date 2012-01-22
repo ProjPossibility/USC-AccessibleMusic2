@@ -60,7 +60,6 @@ $(document).ready(function() {
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
   $('#searchbutton').click(function(){
-	  alert("test");
   	  var search_id= document.getElementById("search_type");
   	  var search_type = search_id.options[search_id.selectedIndex];
   	  var phpURL = "player.php";
