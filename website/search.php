@@ -49,9 +49,9 @@ if ($search_type == 'artistalbums') {
 		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
 	
-	//echo '<pre>';
-	//var_dump($resultsTemp);
-	//die('crap out');
+	echo '<pre>';
+	var_dump($resultsTemp);
+	die('crap out');
 	
 	$searchResults = $resultsTemp->result;
 	
