@@ -72,8 +72,10 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     foreach ($myPlaylists as $playlist) {
       ?><li><a href="<?= $playlist->shortUrl?>"><?=$playlist->name?></a></li><?
     }
-    ?></ul><a href="?logout=1">Log out.</a><?
+    ?></ul><a href="a.php?logout=1">Log out.</a><?
   } else {
+    die ('C: wtf auth failed? no current user??');
+    
     # auth failure, clear session
     session_destroy();
     # and start again
