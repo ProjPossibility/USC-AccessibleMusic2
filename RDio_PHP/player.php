@@ -12,7 +12,6 @@ $search_type = $_GET["type"];
 echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 if ($search_type == 0){
 	echo "search suggestions";
 	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
