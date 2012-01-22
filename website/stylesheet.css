@@ -58,8 +58,31 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
-
+/*
 
 .playerButtons {
 	vertical-align: top;
+}
+*/
+
+#right {
+	float:right;
+	text-align:right;
+}
+
+#center {
+	float:left;
+}
+
+#left {
+	width: 200px;
+	float:left;
+}
+
+#userID {
+	padding: 5px;
+}
+
+#playing {
+	text-align: center;
 }
