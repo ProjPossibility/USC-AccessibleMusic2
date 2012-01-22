@@ -37,7 +37,7 @@ $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 
 
 $resultsTemp = '';
-
+var_dump($query);
 
 
 // each call returns results slightly differently
@@ -62,8 +62,9 @@ if ($search_type == 'artistalbums') {
 		$query = $searchResults[0]->artist;
 	}
 	
-} elseif($search_type == 'trackKeys'){
-	var_dump($query);
+} elseif($search_type == "trackKeys"){
+	
+	
 	$resultsTemp = $rdio->call("get", array("query"=>"t4906983, t4907053, t4164073, t2813247, t3483547"));
 	
 	$searchResults = $resultsTemp;
@@ -111,7 +112,8 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
-	$trackKeys = @$value->trackKeys;
+	$track_temp = @$value->trackKeys;
+	$trackKeys = implode(",", track_temp);
 	var_dump($trackKeys);
 	if($type != "r"){
 		if ($type != "p"){
