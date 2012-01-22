@@ -1,4 +1,4 @@
-function search_play( key, type ) {
+function search_play( key ) {
 	//alert(document.title);
 	var search_field = document.getElementById('play_key');
 	//alert(search_field.value);
