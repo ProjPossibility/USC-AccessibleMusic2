@@ -10,7 +10,7 @@
 		<div id="artistName"><a href="javascript:search_albums('<?=$artistkey?>')"><?=$artist?></a></div>
 	</div>
 	<div id="length_explicit">
-		<div id="length"><?=($length < 1 ? '# Songs: ' : '') . $length?></div>
+		<div id="length"><?=($length < 1 ? '' : 'Playlist: ') . $length?></div>
 		<div id="empty_div2">&nbsp;</div>
 		<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
 	</div>
