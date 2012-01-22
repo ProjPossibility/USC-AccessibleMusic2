@@ -4,10 +4,12 @@
 	<div id="type"><?=$type?></div>
 	<div id="info">
 		<div id="songName"><a href="javascript:search_play('<?=$key?>')"><?=$name?></a></div>
-		<div>&nbsp;</div>
+		<div id="empty_div1">&nbsp;</div>
 		<div id="artistName"><a href="javascript:search_albums('<?=$artistkey?>')"><?=$artist?></a></div>
 	</div>
-	<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
-	<div id="length"><?=$length?></div>
+	<div id="length_explicit">
+		<div id="length"># Songs: <?=$length?></div>
+		<div id="explicit"><?=($explicit == 1 ? "Explicit" : "")?></div>
+	</div>
 	<div style="padding: 5px 0 5px; display: block; clear: both;"></div>
 </div>
