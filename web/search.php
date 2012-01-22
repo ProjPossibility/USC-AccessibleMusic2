@@ -112,7 +112,8 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
-	$trackKeys = @$value->trackKeys;
+	$track_temp = @$value->trackKeys;
+	$trackKeys = implode(",", track_temp);
 	var_dump($trackKeys);
 	if($type != "r"){
 		if ($type != "p"){
