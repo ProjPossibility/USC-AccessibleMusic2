@@ -10,7 +10,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 $query = $_GET["query"];
 echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-$searchResults = $rdio->call("searchSuggestions", array("query" => "pumped up kicks"));
+$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 
 foreach($searchResults->result as $key => $value){
 	echo $key . "   " . $value->key . "<br>";
