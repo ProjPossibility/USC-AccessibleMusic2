@@ -42,9 +42,10 @@ $(document).ready(function() {
 
   // set up the controls
   $('#play').click(function() {
+	  	var options = {initialPosition : 3};
 		if(myPlayState == "2"){
 			//player has been stopped, play from beginning
-			apiswf.rdio_play($('#play_key').val());
+			apiswf.rdio_play($('#play_key').val(), options);
 		}
 		else if(myPlayState == "1"){
 			//player is currentl yplaying, pause it
