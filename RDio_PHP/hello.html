@@ -101,19 +101,19 @@ THE SOFTWARE.
 		speechapi.speak(result.text,"male");
 		if(result.text == "play song"){
 			document.getElementById('play').click();
-			//alert("play song");
+			alert("play song");
 		}
 		else if(result.text == "pause song"){
 			document.getElementById('pause').click();
-			//alert("pause song");
+			alert("pause song");
 		}
 		else if(result.text == "next song"){
 			document.getElementById('next').click();
-			//alert("next song");
+			alert("next song");
 		}
 		else if(result.text == "previous song"){
 			document.getElementById('previous').click();
-			//alert("previous song");
+			alert("previous song");
 		}
 	}
 
@@ -182,10 +182,15 @@ Keyboard shortcuts - z: previous | x: play | c: pause | v: stop | b: next<br>
   <div id="nobody">To hear full tracks subscribe to Rdio.</div>
 </div>
 <br>
-
-<input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" />
-Speech to text:
-<b id='answer'></b>
+<table border="1" width=>
+<tr>
+  <td>Words</td>
+  <td><input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" /></td>
+</tr>
+<tr>
+  <td>Speech to text: </td>
+  <td><b id='answer'></b></td>
+</table>
 <br>
 
 
