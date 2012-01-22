@@ -12,74 +12,117 @@ $search_type = $_GET["type"];
 echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-var_dump($search_type != "All");
+
+
+//var_dump($search_type != "All");
+
+
+
+$resultsTemp = '';
+
 if ($search_type != "All"){
 	echo "normal search";
-	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
-	$numresults = count($searchResults->result->results);
-	$i = 0;
-	$process = array();
-	foreach($searchResults->result->results as $value){
-		$process[$i] = array();
-		$process[$i]["name"] = $value->name;
-		$process[$i]["type"] = $value->type;
-		$process[$i]["key"] = $value->key;
-		$process[$i]["icon"] = $value->icon;
-		if($value->type != "r"){
-			if ($value->type != "p"){
-				$process[$i]["explicit"] = $value->isExplicit;
-			} else {
-				$process[$i]["artist"] = $value->owner;
-				$process[$i]["artistKey"] = $value->ownerKey;
-			}
-			$process[$i]["length"] = $value->length;
-			$process[$i]["artist"] = $value->artist;
-			$process[$i]["artistKey"] = $value->artistKey;
-		}
-		$i++;
+	
+	
+	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
+	if ($resultsTemp->status != "ok") {
+		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
+
+	$searchResults = $resultsTemp->result->results;
 } else {
 	echo "search suggestions";
-	$searchResults = $rdio->call("searchSuggestions", array("query" => $query));
-	$numresults = count($searchResults->result);
-	$i = 0;
-	$process = array();
-	foreach($searchResults->result as $value){
-		
+	
+	
+	$resultsTemp = $rdio->call("searchSuggestions", array("query" => $query));
+	if ($resultsTemp->status != "ok") {
+		die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
 	}
+
+	$searchResults = $resultsTemp->result;
+}	
+
+
+
+
+$numresults = count($searchResults);
+$i = 1; //result #
+
+
+
+echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
+
+foreach($searchResults as $value) {
+	$name = $value->name;
+	$type = $value->type;
+	$key = $value->key;
+	$icon = $value->icon;
+	
+	$explicit = '';
+	$length = '';
+	$artist = '';
+	$artistkey = '';
+
+	if($type != "r"){
+		if ($type != "p"){
+			$explicit = $value->isExplicit;
+			$artist = $value->artist;
+			$artistkey = $value->artistKey;
+		} else {
+			$artist = $value->owner;
+			$artistkey = $value->ownerKey;
+		}
+		$length = $value->length;
+	}
+	
+	
+	
+	include('inc/search_results.inc');
+	
+	
+	
+	$i++;
+
 }
+
+
+
+
+/*
 echo "<pre>";
 foreach($process as $array){
 	var_dump($array);
 }
-
-if ($searchResults->status != "ok") {
-	die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
-}
+*/
 
 // echo '<pre>';
 // var_dump($searchResults);
-?>
 
-
-
-<?
-//echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
+//
 
 //foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
 	
 	//var_dump($value);
 	//echo $value->key;
-?>
-	<img src="<?//php echo $value->icon;?>">
-	<?//php echo $value->key; ?>
-	<?//php echo $value->type; ?>
-	<?//php echo $value->artist; ?>
-	<?//php echo $value->name; ?>
-	<?//php echo $value->isExplicit; ?>
-	<?//php echo $value->length; ?>
-<?
+
 //}
 
+
+/*		
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Search</title>
+
+<!link href="search.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<!make explicit red>
+</body>
+</html>
+*/
 ?>
