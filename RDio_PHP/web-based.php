@@ -21,6 +21,10 @@ include_once('lib/debug.php');
 # THE SOFTWARE.
 
 
+echo 'alskjfdlsakdjflsakdjf';
+
+die('yo');
+
 session_start();
 
 require_once 'lib/rdio.php';
