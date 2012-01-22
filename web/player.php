@@ -99,6 +99,9 @@ function MM_swapImage() { //v3.0
 	speechapi.setup("eli","password",onResult, 
 			onFinishTTS, onLoaded, "flashContent");
 
+	function speak() {
+		speechapi.speak(document.getElementById('words').value,"male");
+	}
 
 	function onResult(result) {
 		//document.getElementById('answer').innerHTML = result.text;
@@ -106,6 +109,7 @@ function MM_swapImage() { //v3.0
 		if(result.text == "play song"){
 			$('#play').click();
 			alert("play song");
+			speak(document.getElementById('track').value,"male");
 		}
 		else if(result.text == "pause song"){
 			$('#play').click();
@@ -120,10 +124,11 @@ function MM_swapImage() { //v3.0
 			alert("previous song");
 		}
 	}
-
 	function onFinishTTS() {
 		//alert("finishTTS");
 	}
+	
+	
 </script>
 
 
