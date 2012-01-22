@@ -27,9 +27,9 @@ foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
 	
 	//var_dump($value);
-	echo $value->key;
+	//echo $value->key;
 ?>
-	
+	<img src="<?php=$value->icon?>">
 	
 <?
 }
