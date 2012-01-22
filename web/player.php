@@ -217,7 +217,7 @@ if ($currentUser) {
 =======
 -->
     <div><div style="float:left;">
-    <a href="#search" onclick="document.getElementById('searchForm').focus();">SEARCHASDFGH</a>
+    <a href="#search" onclick="document.getElementById('query').focus();">SEARCHASDFGH</a>
 	<a name="search"><form name="searchForm" id = "searchForm" onsubmit="searchEnter(); return(false);" ></a>
 	<input id="query" alt="Search box" style="font-size:large;" /><select id = "search_type" style=" font-size:large;">
 		<option value = "all">All</option>
