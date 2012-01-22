@@ -5,7 +5,7 @@
 <title>Search</title>
 
 <link href="css/search.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/search_jump.js"></script>
+<!-- <script type="text/javascript" src="js/search_jump.js"></script> -->
 </head>
 
 <body>
