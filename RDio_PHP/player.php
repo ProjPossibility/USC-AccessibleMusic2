@@ -80,7 +80,7 @@ foreach($searchResults as $value) {
 
 	if($type != "r"){
 		if ($type != "p"){
-			$explicit = $value->isExplicit;
+			$explicit = @$value->isExplicit; //suppress errors since it may not exist
 			$artist = $value->artist;
 			$artistkey = $value->artistKey;
 		} else {
