@@ -20,23 +20,23 @@ if ($search_type != "All"){
 	$i = 0;
 	$process = array();
 	foreach($searchResults->result->results as $value){
-		$process[i] = array();
-// 		$process[i]["name"] = $value->name;
-// 		$process[i]["type"] = $value->type;
-// 		$process[i]["key"] = $value->key;
-// 		$process[i]["icon"] = $value->icon;
-// 		if(type != "r"){
-// 			if (type != "p"){
-// 				$process[i]["explicit"] = $value->isExplicit;
-// 			} else {
-// 				$process[i]["artist"] = $value->owner;
-// 				$process[i]["artistKey"] = $value->ownerKey;
-// 			}
-// 			$process[i]["length"] = $value->length;
-// 			$process[i]["artist"] = $value->artist;
-// 			$process[i]["artistKey"] = $value->artistKey;
-// 		}
-		i++;
+		$process[$i] = array();
+		$process[$i]["name"] = $value->name;
+		$process[$i]["type"] = $value->type;
+		$process[$i]["key"] = $value->key;
+		$process[$i]["icon"] = $value->icon;
+		if(type != "r"){
+			if (type != "p"){
+				$process[i]["explicit"] = $value->isExplicit;
+			} else {
+				$process[i]["artist"] = $value->owner;
+				$process[i]["artistKey"] = $value->ownerKey;
+			}
+			$process[i]["length"] = $value->length;
+			$process[i]["artist"] = $value->artist;
+			$process[i]["artistKey"] = $value->artistKey;
+		}
+		$i++;
 	}
 } else {
 	echo "search suggestions";
