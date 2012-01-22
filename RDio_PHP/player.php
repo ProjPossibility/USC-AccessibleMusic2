@@ -20,7 +20,7 @@ if ($search_type != "All"){
 	$i = 0;
 	$process = array();
 	foreach($searchResults->result->results as $value){
-// 		$process[i] = array();
+		$process[i] = array();
 // 		$process[i]["name"] = $value->name;
 // 		$process[i]["type"] = $value->type;
 // 		$process[i]["key"] = $value->key;
