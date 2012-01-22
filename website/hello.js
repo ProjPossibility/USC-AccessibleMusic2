@@ -22,6 +22,7 @@ THE SOFTWARE.
 
 // a global variable that will hold a reference to the api swf once it has loaded
 var apiswf = null;
+var myPlayState = "2";
 
 $(document).ready(function() {
   // on page load use SWFObject to load the API swf into div#apiswf
@@ -95,9 +96,10 @@ callback_object.freeRemainingChanged = function freeRemainingChanged(remaining) 
 }
 
 callback_object.playStateChanged = function playStateChanged(playState) {
-  // The playback state has changed.
-  // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
-//  $('#playState').text(playState);
+	  // The playback state has changed.
+	  // The state can be: 0 - paused, 1 - playing, 2 - stopped, 3 - buffering or 4 - paused.
+	  $('#playState').text(playState);
+	  myPlayState = playState;
 }
 
 callback_object.playingTrackChanged = function playingTrackChanged(playingTrack, sourcePosition) {
