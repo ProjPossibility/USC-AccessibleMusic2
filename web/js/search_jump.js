@@ -7,8 +7,8 @@ function search_play( key ) {
 	var play_button = $('#play');
 	var stop_button = $('#stop');
 	//alert(play_button);
-	play_button.click();
 	stop_button.click();
+	play_button.click();
 }
 
 
