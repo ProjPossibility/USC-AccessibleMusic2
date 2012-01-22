@@ -19,3 +19,6 @@ function search_albums ( key ) {
 	$('#searchsuggest').html(ajax_load).load(phpURL, "query=" + key + "&type=artistalbums");
 }
 
+function search_songs( key ){
+	//Search songs for an album or a playlist
+}
