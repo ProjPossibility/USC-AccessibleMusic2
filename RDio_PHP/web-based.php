@@ -21,9 +21,6 @@ include_once('lib/debug.php');
 # THE SOFTWARE.
 
 
-echo 'alskjfdlsakdjflsakdjf';
-
-
 
 session_start();
 
@@ -39,7 +36,7 @@ $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
 
-//echo $current_url;
+die( $current_url);
 
 if ($_GET['logout']) {
   # to log out, just throw away the session data
