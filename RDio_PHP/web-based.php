@@ -63,7 +63,8 @@ if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
     $_SESSION['oauth_token_secret'] = $rdio->token[1];
   }
   
-  
+  echo 'destroy!';
+  session_destroy();
   die( $current_url);
   
   
