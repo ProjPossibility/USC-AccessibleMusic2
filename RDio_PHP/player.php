@@ -90,6 +90,14 @@ foreach($searchResults as $value) {
 		$length = $value->length;
 	}
 	
+	// expand the text out from the characters for printing
+	switch($type) {
+		case 'r':	$type = 'Artist';	break;
+		case 't':	$type = 'Track';	break;
+		case 'a':	$type = 'Album';	break;
+		case 'p':	$type = 'Playlist';	break;
+	}
+	
 	
 	
 	include('inc/search_results.inc');
