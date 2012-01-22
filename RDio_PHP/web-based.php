@@ -29,9 +29,13 @@ require_once 'lib/rdio-credentials.php';
 # create an instance of the Rdio object with our consumer credentials
 $rdio = new Rdio(array(RDIO_CONSUMER_KEY, RDIO_CONSUMER_SECRET));
 
+//echo 'yo';
+
 # work out what our current URL is
 $current_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
   "://" . $_SERVER['SERVER_NAME'].$_SERVER['SCRIPT_NAME'];
+
+//echo $current_url;
 
 if ($_GET['logout']) {
   # to log out, just throw away the session data
@@ -40,7 +44,7 @@ if ($_GET['logout']) {
   header('Location: '.$current_url);
 }
 
-if (false && $_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
+if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
     $_SESSION['oauth_token_secret']);
@@ -56,7 +60,8 @@ if (false && $_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
   $currentUser = $rdio->call('currentUser');
   if ($currentUser) {
     ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
-      <ul><?
+      <ul><? 
+      //'
     $myPlaylists = $rdio->call('getPlaylists')->result->owned;
     
     # list them
