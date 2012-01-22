@@ -26,7 +26,7 @@ $next_url = "http" . ((!empty($_SERVER['HTTPS'])) ? "s" : "") .
 
 
 
-if ($_SESSION['oauth_token'] && $_SESSION['oauth_token_secret']) {
+if (isset($_SESSION['oauth_token']) && isset($_SESSION['oauth_token_secret'])) {
   
   # we have a token in our session, let's use it
   $rdio->token = array($_SESSION['oauth_token'],
