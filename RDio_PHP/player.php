@@ -12,8 +12,8 @@ $search_type = $_GET["type"];
 echo $search_type;
 //echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
-var_dump($search_type !== 0);
-if ($search_type !== 0){
+var_dump($search_type != 0);
+if ($search_type != 0){
 	echo "normal search";
 	$searchResults = $rdio->call("search", array("query"=>$query, "types"=>($search_type)));
 } else {
