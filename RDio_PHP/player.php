@@ -8,15 +8,26 @@ define('CONSUMER_KEY', 'xyu4k4p2r48p3pec6z8fsupa');
 define('CONSUMER_SECRET', 'pYvb45Xd5D');
 
 $query = $_GET["query"];
-echo $query;
+//echo $query;
 $rdio = new Rdio(array(CONSUMER_KEY, CONSUMER_SECRET));
 $searchResults = $rdio->call("searchSuggestions", array("query" => $query));
 
+
+if ($searchResults->status != "ok") {
+	die ("Server Error: Search Results are not available at this time. -- " . $searchResults->status);
+}
+
+//var_dump($searchResults);
+
 echo '<pre>';
-var_dump($searchResults);
-foreach($searchResults->result as $key => $value){
+$numresults = count($searchResults->result);
+echo "($numresults) Results returned for \"" . htmlentities($query) . "\"";
+foreach($searchResults->result as $value){
 	//echo $key . "   " . $value->key . "<br>";
+	
+	//<img src="<php=$searchResults?>">
 ?>
+	<?php var_dump($value); ?>
 	
 	
 	
