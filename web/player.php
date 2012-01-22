@@ -108,12 +108,12 @@ function MM_swapImage() { //v3.0
 			onFinishTTS, onLoaded, "flashContent");
 
 	function speak(text) {
-		speechapi.speak(text,"male");
+		speechapi.speak(text,"female");
 	}
 
 	function onResult(result) {
 		//document.getElementById('answer').innerHTML = result.text;
-		speechapi.speak(result.text,"male");
+		speechapi.speak(result.text,"female");
 		if(result.text == "play song"){
 			$('#play').click();
 			alert("play song");
@@ -142,13 +142,13 @@ function MM_swapImage() { //v3.0
 		speechapi.speak("now playing "+$('#track').text(), "female");
 	}
 	function speakTrack(){
-		speechapi.speak($('#track').text(),"male");
+		speechapi.speak($('#track').text(),"female");
 	}
 	function speakArtist(){
-		speechapi.speak($('#artist').text(),"male");
+		speechapi.speak($('#artist').text(),"female");
 	}
 	function speakAlbum(){
-		speechapi.speak($('#album').text(),"male");
+		speechapi.speak($('#album').text(),"female");
 	}
 	
 	
