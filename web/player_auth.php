@@ -42,6 +42,8 @@ if (isset($_SESSION['oauth_token']) && isset($_SESSION['oauth_token_secret'])) {
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
   
+  
+  var_dump($currentUser);
   /*
   if ($currentUser) {
     ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
