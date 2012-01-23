@@ -92,6 +92,7 @@ a:active  {color:#266FB1;}
 .container {
 	left:50%;
 	top:50%;
+	width: 960px;
 	margin: 0 auto;
 	overflow: auto;
 }
