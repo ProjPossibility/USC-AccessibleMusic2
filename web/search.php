@@ -73,6 +73,7 @@ if ($search_type == 'artistalbums') {
 	
 	$resultsTemp = $rdio->call("getHeavyRotation");
 	var_dump($resultsTemp);
+	$searchResults = $resultsTemp->result;
 	
 } elseif ($search_type != 'all' ) {
 	//echo "normal search";
