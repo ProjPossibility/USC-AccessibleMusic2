@@ -34,10 +34,10 @@ $(document).ready(function() {
 			apiswf.rdio_play();
 		}
   });
-  $('#stop').click(function() { alert("next"); apiswf.rdio_stop(); });
+  $('#stop').click(function() { apiswf.rdio_stop(); });
 //  $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
-  $('#next').click(function() { apiswf.rdio_next(); });
+  $('#next').click(function() { alert("next"); apiswf.rdio_next(); });
   $('#searchbutton').click(function(){
   	  var search_id= document.getElementById("search_type");
   	  var search_type = search_id.options[search_id.selectedIndex];
