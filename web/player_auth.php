@@ -43,7 +43,7 @@ if (isset($_SESSION['oauth_token']) && isset($_SESSION['oauth_token_secret'])) {
   $currentUser = $rdio->call('currentUser');
   
   
-  var_dump($currentUser);
+  //var_dump($currentUser);
   /*
   if ($currentUser) {
     ?><h1><?=$currentUser->result->firstName?>'s Playlists</h1>
