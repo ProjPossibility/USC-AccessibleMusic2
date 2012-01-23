@@ -46,11 +46,11 @@ $(document).ready(function() {
   	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
   	  //$('#searchsuggest').load(phpURL);
     });
-   
+   $('#suggest40').click(function(){
+	   onload_ajax();
+   });
    onload_ajax();
 });
-
-
 
 function onload_ajax() {
 	var phpURL = "search.php";
