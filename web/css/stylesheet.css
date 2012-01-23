@@ -29,14 +29,14 @@ a:active  {color:#266FB1;}
 }
 
 #header {
-	width: 960px;
+	width: 980px;
 	margin: 0 auto;
 	padding: 10px 0;
 	position: relative;
 }
 
 #container {
-	width: 960px;
+	width: 980px;
 	margin: 0 auto;
 	font-size: 1.4em;
 	overflow: auto;
@@ -45,7 +45,7 @@ a:active  {color:#266FB1;}
 
 #content {
 	float: left;
-	width: 960px;
+	width: 980px;
 }
 
 
