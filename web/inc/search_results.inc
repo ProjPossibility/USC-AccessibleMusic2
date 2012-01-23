@@ -4,10 +4,26 @@
 	<div id="type"><?=$type?></div>
 	<div id="info">
 		<?php if ($type == 'Song') { ?>
-			<div id="songName"><a href="javascript:search_play('<?=$key?>')"><?=$name?></a></div>
+			<div id="songName">
+			
+			<?php if ($canStream) { ?>
+			<a href="javascript:search_play('<?=$key?>')"><?=$name?></a>
+			<?php } else { ?>
+			<?=$name?>
+			<?php } ?>
+			
+			</div>
 			<div id="empty_div1">&nbsp;</div>
 		<?php } else if ($key != '') { ?>
-			<div id="play"><a href="javascript:search_play('<?=$key?>')">[Play <?=$type?>]</a></div>
+			<div id="play">
+			
+			<?php if ($canStream) { ?>
+			<a href="javascript:search_play('<?=$key?>')">[Play <?=$type?>]</a>
+			<?php } else { ?>
+			
+			<?php } ?>
+			
+			</div>
 			<div id="albumsearch"><a href="javascript:search_songs('<?=$trackKeys?>','<?=$key?>')"><?=$name?></a></div>
 		<?php }?>
 		
