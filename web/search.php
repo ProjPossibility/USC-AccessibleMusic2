@@ -27,7 +27,6 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 $query = $_GET["query"];
 $search_type = $_GET["type"];
 //$other_info = $_GET['other'];
-echo $search_type;
 //echo $search_type;
 //echo $query;
 
@@ -70,7 +69,12 @@ if ($search_type == 'artistalbums') {
 	}
 	$searchResults = $resultsTemp->result;
 
-}elseif ($search_type != 'all' ) {
+} elseif ($search_type == "onload") {
+	
+	$resultsTemp = $rdio->call("getHeavyRotation", array("user" => $currentUser));
+	var_dump(resultsTemp);
+	
+} elseif ($search_type != 'all' ) {
 	//echo "normal search";
 	
 	$resultsTemp = $rdio->call("search", array("query"=>$query, "types"=>($search_type), "extras"=>"trackKeys"));
@@ -79,11 +83,6 @@ if ($search_type == 'artistalbums') {
 	}
 
 	$searchResults = $resultsTemp->result->results;
-} elseif ($search_type == "onload") {
-	
-	$resultsTemp = $rdio->call("getHeavyRotation", array("user" => $currentUser));
-	var_dump(resultsTemp);
-	
 } else {
 	//echo "search suggestions";
 	
