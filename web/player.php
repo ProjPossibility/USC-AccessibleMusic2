@@ -22,15 +22,13 @@ require_once('player_auth.php');
 <script type="text/javascript" src="http://www.speechapi.com/static/lib/swfobject.js"></script>
 <script type="text/javascript">
 	function init(){
-		
-		shortcut.add("z",function(){
-			$('#previous').click();
-		},{
+		shortcut.add("a",function(){
+			$('#previous').click();		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
-		shortcut.add("x",function(){
+		shortcut.add("s",function(){
 			$('#play').click();
 		},{
 			'type':'keydown',
@@ -44,14 +42,14 @@ require_once('player_auth.php');
 			'propagate':true,
 			'target':document
 		});*/
-		shortcut.add("v",function(){
+		shortcut.add("w",function(){
 			$('#stop').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
 			'target':document
 		});
-		shortcut.add("b",function(){
+		shortcut.add("d",function(){
 			$('#next').click();
 		},{
 			'type':'keydown',
@@ -195,7 +193,7 @@ if ($currentUser) {
  <img src="img/stop.png" alt="stop" name="stop" id="stop" style="visibility:hidden; position:absolute; left:-999px;" />
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Previous','','img/blackBWD.png',1)"  onmousedown="MM_swapImage('Previous','','img/invertedBWD.png',1)" onmouseup="MM_swapImage('Previous','','img/blueBWD.png',1)" ><img src="img/blueBWD.png" alt="Previous" name="Previous" width="133" height="108" border="0" id="previous" /></a>
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Play Pause','','img/blackPlaypause.png',1)" onmousedown="MM_swapImage('Play Pause','','img/invertedPlaypause.png',1)" onmouseup="MM_swapImage('Play Pause','','img/bluePlaypause.png',1)"><img src="img/bluePlaypause.png" alt="Play Pause " name="Play Pause" width="133" height="108" border="0" id="play" /></a>
-<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="forward" /></a></div>
+<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="next" /></a></div>
 <div id="playing">
   <div id="currentstate"></div>
 <a onclick="speakTrack()"><div id="track" style="width:425px; text-decoration:underline;"></div></a>
@@ -223,7 +221,7 @@ if ($currentUser) {
       <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Search','','img/blackSearch.png',1)" onmousedown="MM_swapImage('Search','','img/invertedSearch.png',1)" onmouseup="MM_swapImage('Search','','img/blueSearch.png',1)"><img src="img/blueSearch.png" alt="Search" name="Search" width="100" height="81" border="0" id="searchbutton" class="playerSearch" /></a>
 	  
 	</form>
-	<a onclick="speakNowPlaying()">Now Playing</a>
+	<!--<a onclick="speakNowPlaying()">Now Playing</a>-->
       <input type="hidden" id="words" value="play song, pause song, next song, previous song" size="100" style="left;" /></div>
     <div style="float:right;">
     <div id="myAlternativeContent"></div>
