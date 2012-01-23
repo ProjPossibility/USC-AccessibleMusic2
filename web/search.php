@@ -124,7 +124,7 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
-	$canStream = '';
+	$canStream = 'lol';
 	if ($type == 'p' || $type == 'a'){
 		$track_temp = $value->trackKeys;
 		$trackKeys = implode(",", $track_temp);
