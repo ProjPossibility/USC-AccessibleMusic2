@@ -34,7 +34,7 @@ $(document).ready(function() {
 			apiswf.rdio_play();
 		}
   });
-  $('#stop').click(function() { apiswf.rdio_stop(); });
+  $('#stop').click(function() { alert("next"); apiswf.rdio_stop(); });
 //  $('#pause').click(function() { apiswf.rdio_pause(); });
   $('#previous').click(function() { apiswf.rdio_previous(); });
   $('#next').click(function() { apiswf.rdio_next(); });
