@@ -27,7 +27,7 @@ define('CONSUMER_SECRET', 'pYvb45Xd5D');
 $query = $_GET["query"];
 $search_type = $_GET["type"];
 //$other_info = $_GET['other'];
-
+echo $search_type;
 //echo $search_type;
 //echo $query;
 
