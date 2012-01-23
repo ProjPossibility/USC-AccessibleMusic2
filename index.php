@@ -1,1 +1,7 @@
-<?php echo "Hello world!"; ?>
+<?php 
+
+//redirect to the player welcome
+
+header('Location: web/');
+
+?>
