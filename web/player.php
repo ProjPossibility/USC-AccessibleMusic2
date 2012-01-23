@@ -199,7 +199,7 @@ if ($currentUser) {
  <img src="img/stop.png" alt="stop" name="stop" id="stop" style="visibility:hidden; position:absolute; left:-999px;" />
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Previous','','img/blackBWD.png',1)"  onmousedown="MM_swapImage('Previous','','img/invertedBWD.png',1)" onmouseup="MM_swapImage('Previous','','img/blueBWD.png',1)" ><img src="img/blueBWD.png" alt="Previous" name="Previous" width="133" height="108" border="0" id="previous" /></a>
 <a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Play Pause','','img/blackPlaypause.png',1)" onmousedown="MM_swapImage('Play Pause','','img/invertedPlaypause.png',1)" onmouseup="MM_swapImage('Play Pause','','img/bluePlaypause.png',1)"><img src="img/bluePlaypause.png" alt="Play Pause " name="Play Pause" width="133" height="108" border="0" id="play" /></a>
-<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="forward" /></a></div>
+<a href="#" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Forward','','img/blackFWD.png',1)" onmousedown="MM_swapImage('Forward','','img/invertedFWD.png',1)" onmouseup="MM_swapImage('Forward','','img/blueFWD.png',1)"><img src="img/blueFWD.png" alt="Forward" name="Forward" width="133" height="108" border="0" id="next" /></a></div>
 <div id="playing">
   <div id="currentstate"></div>
 <a onclick="speakTrack()"><div id="track" style="width:425px; text-decoration:underline;"></div></a>
