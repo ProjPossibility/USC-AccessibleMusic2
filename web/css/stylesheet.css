@@ -90,7 +90,8 @@ a:active  {color:#266FB1;}
 }
 
 .container {
-	width: 960px;
+	left:50%;
+	top:50%;
 	margin: 0 auto;
 	overflow: auto;
 	padding: 150px 0 10px;
