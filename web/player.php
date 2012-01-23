@@ -61,6 +61,15 @@ require_once('player_auth.php');
 			'target':document,
 			'disable_in_input':true
 		});
+		shortcut.add("q",function(){
+			//$('#next').click();
+			document.getElementById('query').focus();
+		},{
+			'type':'keydown',
+			'propagate':true,
+			'target':document,
+			'disable_in_input':true
+		});
 	}
 	window.onload=init();
 	
