@@ -58,12 +58,6 @@ require_once('player_auth.php');
 		});
 	}
 	window.onload=init();
-
-	function onload_ajax() {
-		var phpURL = "search.php";
-		var ajax_load = "<img src='img/load.gif' alt='loading...' />";
-		alert( $('#searchsuggest').html(ajax_load).load(phpURL, "query=blank&type=" + "onload") );
-	}
 	
 
 	function searchEnter(){

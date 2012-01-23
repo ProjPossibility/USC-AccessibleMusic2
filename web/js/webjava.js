@@ -46,7 +46,17 @@ $(document).ready(function() {
   	  $('#searchsuggest').html(ajax_load).load(phpURL, "query=" + $('#query').val() + "&type=" + search_type.value);
   	  //$('#searchsuggest').load(phpURL);
     });
+   
+   onload_ajax();
 });
+
+
+
+function onload_ajax() {
+	var phpURL = "search.php";
+	var ajax_load = "<img src='img/load.gif' alt='loading...' />";
+	$('#searchsuggest').html(ajax_load).load(phpURL, "query=blank&type=" + "onload");
+}
 
 
 // the global callback object
