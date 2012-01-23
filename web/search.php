@@ -61,6 +61,10 @@ if ($search_type == 'artistalbums') {
 		$query = $searchResults[0]->artist;
 	}
 	
+	$numresults = count($searchResults);
+	echo "<p>($numresults) Album results returned for \"" . htmlentities($query) . "\"</p>";
+	echo "<ol>";
+	
 } elseif($search_type == "trackKeys"){
 	
 	$resultsTemp = $rdio->call("get", array("keys"=>$query));
@@ -87,6 +91,10 @@ if ($search_type == 'artistalbums') {
 	}
 
 	$searchResults = $resultsTemp->result->results;
+	
+	$numresults = count($searchResults);
+	echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
+	echo "<ol>";
 } else {
 	//echo "search suggestions";
 	
@@ -97,18 +105,13 @@ if ($search_type == 'artistalbums') {
 	}
 
 	$searchResults = $resultsTemp->result->results;
+	
+	$numresults = count($searchResults);
+	echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
+	echo "<ol>";
 }
 
-
-
-
-$numresults = count($searchResults);
 $i = 1; //result #
-
-
-
-echo "<p>($numresults) Results returned for \"" . htmlentities($query) . "\"</p>";
-echo "<ol>";
 
 foreach($searchResults as $value) {
 	//var_dump($value);
