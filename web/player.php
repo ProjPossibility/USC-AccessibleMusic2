@@ -26,35 +26,40 @@ require_once('player_auth.php');
 			$('#previous').click();		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		shortcut.add("s",function(){
 			$('#play').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		/*shortcut.add("c",function(){
 			document.getElementById('pause').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});*/
 		shortcut.add("w",function(){
 			$('#stop').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		shortcut.add("d",function(){
 			$('#next').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 	}
 	window.onload=init();
