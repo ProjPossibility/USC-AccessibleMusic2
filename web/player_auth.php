@@ -42,7 +42,7 @@ if (isset($_SESSION['oauth_token']) && isset($_SESSION['oauth_token_secret'])) {
   # make sure that we can in fact make an authenticated call
   $currentUser = $rdio->call('currentUser');
   
-  
+  //echo '<pre>';
   //var_dump($currentUser);
   /*
   if ($currentUser) {
