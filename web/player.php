@@ -26,35 +26,40 @@ require_once('player_auth.php');
 			$('#previous').click();		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		shortcut.add("s",function(){
 			$('#play').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		/*shortcut.add("c",function(){
 			document.getElementById('pause').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});*/
 		shortcut.add("w",function(){
 			$('#stop').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 		shortcut.add("d",function(){
 			$('#next').click();
 		},{
 			'type':'keydown',
 			'propagate':true,
-			'target':document
+			'target':document,
+			'disable_in_input':true
 		});
 	}
 	window.onload=init();
@@ -117,22 +122,18 @@ function MM_swapImage() { //v3.0
 		speechapi.speak(result.text,"female");
 		if(result.text == "play song"){
 			$('#play').click();
-			alert("play song");
 			//speak("playing song "+$('#track').text(),"male");
 		}
 		else if(result.text == "pause song"){
 			$('#play').click();
-			alert("pause song");
 			//speak("paused song "+$('#track').text(),"male");
 		}
 		else if(result.text == "next song"){
 			$('#next').click();
-			alert("next song");
 			//speak($('#track').text(),"male");
 		}
 		else if(result.text == "previous song"){
 			$('#previous').click();
-			alert("previous song");
 			//speak($('#track').text(),"male");
 		}
 	}
