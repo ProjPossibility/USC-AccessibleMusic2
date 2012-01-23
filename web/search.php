@@ -124,6 +124,7 @@ foreach($searchResults as $value) {
 	$artistkey = '';
 	$name = '';
 	$key = '';
+	$canStream = '';
 	if ($type == 'p' || $type == 'a'){
 		$track_temp = $value->trackKeys;
 		$trackKeys = implode(",", $track_temp);
@@ -134,6 +135,7 @@ foreach($searchResults as $value) {
 			$explicit = @$value->isExplicit; //suppress errors since it may not exist
 			$artist = $value->artist;
 			$artistkey = $value->artistKey;
+			$canStream = @$value->canStream;
 		} else {
 			$artist = $value->owner;
 			$artistkey = $value->ownerKey;
